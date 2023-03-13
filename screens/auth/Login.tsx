@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 import { Checkbox as RNPCheckbox } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
-import { Margin, FontFamily, Color } from '../GlobalStyles';
+import { Margin, FontFamily, Color } from '../../GlobalStyles';
 
 type LoginType = {
   style?: StyleProp<ViewStyle>;
@@ -119,7 +119,7 @@ Lorem ipsum dolor sit amet consectetur.`}</Text>
                 styles.mt20,
                 styles.buttonFlexBox,
               ]}
-              onPress={() => navigation.navigate('Dashboard')}
+              onPress={() => {}}
             >
               <Text
                 style={[
@@ -134,9 +134,7 @@ Lorem ipsum dolor sit amet consectetur.`}</Text>
               <Text style={[styles.vousNavezPas, styles.vousTypo]}>
                 Vous n'avez pas de compte ?
               </Text>
-              <Pressable
-                onPress={() => navigation.navigate('SignUp')}
-              >
+              <Pressable onPress={() => {}}>
                 <Text
                   style={[styles.inscrivezVous2, styles.vousTypo]}
                 >

@@ -1,7 +1,13 @@
-import * as React from "react";
-import { StyleSheet, View, Image, Text, ImageBackground } from "react-native";
-import PasswordView from "../components/PasswordView";
-import { Margin, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react';
+import {
+  StyleSheet,
+  View,
+  Image,
+  Text,
+  ImageBackground,
+} from 'react-native';
+import PasswordView from '../../components/PasswordView';
+import { Margin, FontFamily, Color } from '../../GlobalStyles';
 
 const SignUp = () => {
   return (
@@ -16,7 +22,7 @@ const SignUp = () => {
             <Image
               style={styles.photoIcon}
               resizeMode="cover"
-              source={require("../assets/photo1.png")}
+              source={require('../assets/photo1.png')}
             />
             <Text
               style={[
@@ -37,14 +43,20 @@ const SignUp = () => {
               Connectez-vous
             </Text>
           </View>
-          <View style={[styles.button, styles.mt20, styles.buttonFlexBox]}>
-            <Text style={[styles.largeLabelMedium16px1, styles.largeTypo]}>
+          <View
+            style={[styles.button, styles.mt20, styles.buttonFlexBox]}
+          >
+            <Text
+              style={[styles.largeLabelMedium16px1, styles.largeTypo]}
+            >
               Emregistrer
             </Text>
           </View>
         </View>
         <View style={[styles.inscription, styles.cardsFlexBox]}>
-          <Text style={[styles.largeLabelMedium16px2, styles.largeTypo]}>
+          <Text
+            style={[styles.largeLabelMedium16px2, styles.largeTypo]}
+          >
             Inscription
           </Text>
           <View style={[styles.inscriptionChild, styles.mt10]} />
@@ -52,7 +64,7 @@ const SignUp = () => {
         <ImageBackground
           style={styles.logo2Icon}
           resizeMode="cover"
-          source={require("../assets/logo21.png")}
+          source={require('../assets/logo21.png')}
         />
       </View>
       <View style={[styles.statusBar, styles.cardsFlexBox]}>
@@ -62,7 +74,7 @@ const SignUp = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require("../assets/symbols3.png")}
+          source={require('../assets/symbols3.png')}
         />
       </View>
     </View>
@@ -83,59 +95,59 @@ const styles = StyleSheet.create({
     marginLeft: Margin.m_221xl,
   },
   cardsFlexBox: {
-    alignItems: "center",
-    position: "absolute",
+    alignItems: 'center',
+    position: 'absolute',
   },
   largeTypo: {
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.interBold,
-    fontWeight: "700",
+    fontWeight: '700',
   },
   vousTypo: {
     fontFamily: FontFamily.interMedium,
-    fontWeight: "500",
+    fontWeight: '500',
     lineHeight: 25,
     letterSpacing: 1,
     fontSize: 14,
     top: 0,
-    textAlign: "left",
-    position: "absolute",
+    textAlign: 'left',
+    position: 'absolute',
   },
   buttonFlexBox: {
-    justifyContent: "center",
-    flexDirection: "row",
-    alignItems: "center",
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   homeIndicator1: {
     marginLeft: -67,
     bottom: 8,
-    left: "50%",
+    left: '50%',
     borderRadius: 100,
     backgroundColor: Color.black,
     width: 134,
     height: 5,
-    position: "absolute",
+    position: 'absolute',
   },
   homeIndicator: {
     bottom: 0,
     width: 390,
     height: 31,
-    display: "none",
+    display: 'none',
     left: 0,
-    position: "absolute",
-    overflow: "hidden",
+    position: 'absolute',
+    overflow: 'hidden',
   },
   slideLogin: {
     top: 306,
     height: 814,
     left: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   photoIcon: {
     borderRadius: 10,
-    maxWidth: "100%",
-    maxHeight: "100%",
-    overflow: "hidden",
+    maxWidth: '100%',
+    maxHeight: '100%',
+    overflow: 'hidden',
   },
   largeLabelMedium16px: {
     fontSize: 18,
@@ -165,7 +177,7 @@ const styles = StyleSheet.create({
     width: 324,
     paddingHorizontal: 32,
     paddingVertical: 12,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   cards: {
     top: 218,
@@ -176,8 +188,8 @@ const styles = StyleSheet.create({
     color: Color.maroon,
   },
   inscriptionChild: {
-    borderStyle: "solid",
-    borderColor: "#000",
+    borderStyle: 'solid',
+    borderColor: '#000',
     borderTopWidth: 1,
     width: 73,
     height: 1,
@@ -191,14 +203,14 @@ const styles = StyleSheet.create({
     width: 75,
     height: 97,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   body: {
     top: 74,
     left: 31,
     width: 328,
     height: 1120,
-    position: "absolute",
+    position: 'absolute',
   },
   time: {
     fontSize: 15,
@@ -208,26 +220,26 @@ const styles = StyleSheet.create({
   barsstatusTime: {
     paddingHorizontal: 0,
     paddingVertical: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   symbolsIcon: {
     width: 68,
     height: 13,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   statusBar: {
     top: 7,
     right: 21,
     left: 22,
-    flexDirection: "row",
-    display: "none",
+    flexDirection: 'row',
+    display: 'none',
   },
   signUp: {
     backgroundColor: Color.ivory,
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 1258,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
 });
 

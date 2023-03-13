@@ -1,7 +1,13 @@
-import * as React from "react";
-import { useState } from "react";
-import { StyleSheet, View, Pressable, Image, Text } from "react-native";
-import { Margin, Color, FontFamily } from "../GlobalStyles";
+import * as React from 'react';
+import { useState } from 'react';
+import {
+  StyleSheet,
+  View,
+  Pressable,
+  Image,
+  Text,
+} from 'react-native';
+import { Margin, Color, FontFamily } from '../../GlobalStyles';
 
 type BurgerType = {
   state?: any;
@@ -18,13 +24,18 @@ const Burger = ({ state, navigation }: BurgerType) => {
       <View style={styles.menu}>
         <Pressable
           style={[styles.rectangleParent, styles.frameChildLayout]}
-          onPress={() => navigation.navigate("Dashboard")}
+          onPress={() => navigation.navigate('Dashboard')}
         >
-          <View style={[styles.frameChild, styles.frameChildLayout]} />
+          <View
+            style={[styles.frameChild, styles.frameChildLayout]}
+          />
           <Image
-            style={[styles.icsharpCloseIcon, styles.frameParentPosition]}
+            style={[
+              styles.icsharpCloseIcon,
+              styles.frameParentPosition,
+            ]}
             resizeMode="cover"
-            source={require("../assets/icsharpclose.png")}
+            source={require('../assets/icsharpclose.png')}
           />
         </Pressable>
         <View style={[styles.menuInner, styles.menuParentPosition]}>
@@ -32,10 +43,14 @@ const Burger = ({ state, navigation }: BurgerType) => {
             <Image
               style={[styles.vectorIcon, styles.vectorIconLayout]}
               resizeMode="cover"
-              source={require("../assets/vector1.png")}
+              source={require('../assets/vector1.png')}
             />
             <Text
-              style={[styles.dconnexion, styles.ml40, styles.dconnexionTypo]}
+              style={[
+                styles.dconnexion,
+                styles.ml40,
+                styles.dconnexionTypo,
+              ]}
             >
               Déconnexion
             </Text>
@@ -45,23 +60,32 @@ const Burger = ({ state, navigation }: BurgerType) => {
         <View style={[styles.groupParent, styles.menuParentPosition]}>
           <Pressable
             style={styles.groupContainer}
-            onPress={() => navigation.navigate("ChangeMdp")}
+            onPress={() => navigation.navigate('ChangeMdp')}
           >
             <View style={styles.groupChildPosition}>
-              <View style={[styles.groupBg, styles.groupChildPosition]} />
+              <View
+                style={[styles.groupBg, styles.groupChildPosition]}
+              />
             </View>
-            <View style={[styles.changLeMotDePasse, styles.frameParentFlexBox]}>
+            <View
+              style={[
+                styles.changLeMotDePasse,
+                styles.frameParentFlexBox,
+              ]}
+            >
               <Image
                 style={styles.changLeMotDePasseChild}
                 resizeMode="cover"
-                source={require("../assets/group-239688.png")}
+                source={require('../assets/group-239688.png')}
               />
               <Pressable style={[styles.arrow, styles.ml70]}>
-                <View style={[styles.arrowChild, styles.vectorIconLayout]} />
+                <View
+                  style={[styles.arrowChild, styles.vectorIconLayout]}
+                />
                 <Image
                   style={styles.arrowItem}
                   resizeMode="cover"
-                  source={require("../assets/vector-59.png")}
+                  source={require('../assets/vector-59.png')}
                 />
               </Pressable>
             </View>
@@ -72,17 +96,21 @@ const Burger = ({ state, navigation }: BurgerType) => {
               styles.frameParentFlexBox,
               styles.frameParentPosition,
             ]}
-            onPress={() => navigation.navigate("VerroueApp")}
+            onPress={() => navigation.navigate('VerroueApp')}
           >
             <View style={styles.frameParentFlexBox}>
               <View style={styles.groupLayout}>
                 <View
-                  style={[styles.groupItem, styles.groupLayout, styles.groupBg]}
+                  style={[
+                    styles.groupItem,
+                    styles.groupLayout,
+                    styles.groupBg,
+                  ]}
                 />
                 <Image
                   style={styles.vectorIcon1}
                   resizeMode="cover"
-                  source={require("../assets/vector2.png")}
+                  source={require('../assets/vector2.png')}
                 />
               </View>
               <Text style={[styles.motDePasseTypo, styles.ml16]}>
@@ -90,17 +118,19 @@ const Burger = ({ state, navigation }: BurgerType) => {
               </Text>
             </View>
             <Pressable style={[styles.arrow, styles.ml41]}>
-              <View style={[styles.arrowChild, styles.vectorIconLayout]} />
+              <View
+                style={[styles.arrowChild, styles.vectorIconLayout]}
+              />
               <Image
                 style={styles.arrowItem}
                 resizeMode="cover"
-                source={require("../assets/vector-591.png")}
+                source={require('../assets/vector-591.png')}
               />
             </Pressable>
           </Pressable>
           <Pressable
             style={[styles.frameGroup, styles.frameParentFlexBox]}
-            onPress={() => navigation.navigate("VerroueApp1")}
+            onPress={() => navigation.navigate('VerroueApp1')}
           >
             <View style={styles.vectorFlexBox}>
               <View
@@ -114,21 +144,30 @@ const Burger = ({ state, navigation }: BurgerType) => {
                 <Image
                   style={styles.vectorIcon2}
                   resizeMode="cover"
-                  source={require("../assets/vector3.png")}
+                  source={require('../assets/vector3.png')}
                 />
               </View>
-              <View style={[styles.motDePassePaiementWrapper, styles.ml22]}>
-                <Text style={[styles.motDePasse, styles.motDePasseTypo]}>
+              <View
+                style={[
+                  styles.motDePassePaiementWrapper,
+                  styles.ml22,
+                ]}
+              >
+                <Text
+                  style={[styles.motDePasse, styles.motDePasseTypo]}
+                >
                   Mot de passe paiement
                 </Text>
               </View>
             </View>
             <Pressable style={[styles.arrow, styles.ml64]}>
-              <View style={[styles.arrowChild, styles.vectorIconLayout]} />
+              <View
+                style={[styles.arrowChild, styles.vectorIconLayout]}
+              />
               <Image
                 style={styles.arrowItem}
                 resizeMode="cover"
-                source={require("../assets/vector-592.png")}
+                source={require('../assets/vector-592.png')}
               />
             </Pressable>
           </Pressable>
@@ -143,34 +182,46 @@ const Burger = ({ state, navigation }: BurgerType) => {
               <Image
                 style={styles.groupLayout}
                 resizeMode="cover"
-                source={require("../assets/group-1026.png")}
+                source={require('../assets/group-1026.png')}
               />
-              <Text style={[styles.motDePasseTypo, styles.ml16]}>A propos</Text>
+              <Text style={[styles.motDePasseTypo, styles.ml16]}>
+                A propos
+              </Text>
             </View>
             <Pressable style={[styles.arrow, styles.ml173]}>
-              <View style={[styles.arrowChild, styles.vectorIconLayout]} />
+              <View
+                style={[styles.arrowChild, styles.vectorIconLayout]}
+              />
               <Image
                 style={styles.arrowItem}
                 resizeMode="cover"
-                source={require("../assets/vector-591.png")}
+                source={require('../assets/vector-591.png')}
               />
             </Pressable>
           </View>
           <Image
             style={[styles.lineIcon, styles.menuParentPosition]}
             resizeMode="cover"
-            source={require("../assets/line.png")}
+            source={require('../assets/line.png')}
           />
         </View>
-        <View style={[styles.frameParent2, styles.menuParentPosition]}>
-          <View style={[styles.imageParent, styles.frameParentFlexBox]}>
+        <View
+          style={[styles.frameParent2, styles.menuParentPosition]}
+        >
+          <View
+            style={[styles.imageParent, styles.frameParentFlexBox]}
+          >
             <Image
               style={styles.imageIcon}
               resizeMode="cover"
-              source={require("../assets/image1.png")}
+              source={require('../assets/image1.png')}
             />
             <Text
-              style={[styles.sergeKassi, styles.ml13, styles.dconnexionTypo]}
+              style={[
+                styles.sergeKassi,
+                styles.ml13,
+                styles.dconnexionTypo,
+              ]}
             >
               Serge Kassi
             </Text>
@@ -212,23 +263,23 @@ const styles = StyleSheet.create({
   },
   frameChildLayout: {
     height: 45,
-    position: "absolute",
+    position: 'absolute',
   },
   frameParentPosition: {
     left: 7,
-    position: "absolute",
+    position: 'absolute',
   },
   menuParentPosition: {
     width: 335,
     left: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   vectorIconLayout: {
     width: 24,
     height: 24,
   },
   dconnexionTypo: {
-    textAlign: "center",
+    textAlign: 'center',
     color: Color.black,
     lineHeight: 29,
     letterSpacing: -0.3,
@@ -239,11 +290,11 @@ const styles = StyleSheet.create({
     height: 40,
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   frameParentFlexBox: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   groupLayout: {
     width: 40,
@@ -254,15 +305,15 @@ const styles = StyleSheet.create({
     borderRadius: 12,
   },
   vectorFlexBox: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   motDePasseTypo: {
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.darkslategray,
     fontFamily: FontFamily.interSemibold,
-    fontWeight: "600",
+    fontWeight: '600',
     lineHeight: 24,
     letterSpacing: 1,
     fontSize: 14,
@@ -272,7 +323,7 @@ const styles = StyleSheet.create({
     height: 848,
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
     width: 390,
   },
   frameChild: {
@@ -285,7 +336,7 @@ const styles = StyleSheet.create({
     width: 30,
     height: 30,
     top: 9,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   rectangleParent: {
     left: 345,
@@ -303,7 +354,7 @@ const styles = StyleSheet.create({
   menuInner: {
     top: 777,
     backgroundColor: Color.tomato,
-    shadowColor: "rgba(255, 255, 255, 0.5)",
+    shadowColor: 'rgba(255, 255, 255, 0.5)',
     shadowOffset: {
       width: 0,
       height: 4,
@@ -327,16 +378,16 @@ const styles = StyleSheet.create({
     top: -6,
     left: -9,
     backgroundColor: Color.silver_100,
-    display: "none",
+    display: 'none',
     height: 24,
-    position: "absolute",
+    position: 'absolute',
   },
   arrowItem: {
     top: -1,
     left: -1,
     width: 8,
     height: 14,
-    position: "absolute",
+    position: 'absolute',
   },
   arrow: {
     width: 6,
@@ -345,26 +396,26 @@ const styles = StyleSheet.create({
   changLeMotDePasse: {
     top: 8,
     left: 13,
-    position: "absolute",
+    position: 'absolute',
   },
   groupContainer: {
     width: 305,
     height: 40,
     left: 7,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   groupItem: {
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   vectorIcon1: {
     left: 12,
     width: 16,
     height: 22,
     top: 9,
-    position: "absolute",
+    position: 'absolute',
   },
   frameParent: {
     top: 64,
@@ -380,7 +431,7 @@ const styles = StyleSheet.create({
   motDePasse: {
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   motDePassePaiementWrapper: {
     width: 168,
@@ -390,7 +441,7 @@ const styles = StyleSheet.create({
     top: 128,
     left: 9,
     width: 324,
-    position: "absolute",
+    position: 'absolute',
   },
   frameParent1: {
     top: 232,
@@ -408,7 +459,7 @@ const styles = StyleSheet.create({
     height: 46,
   },
   sergeKassi: {
-    fontWeight: "700",
+    fontWeight: '700',
     fontFamily: FontFamily.interBold,
     width: 157,
     height: 28,
@@ -428,11 +479,11 @@ const styles = StyleSheet.create({
     width: 391,
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
     height: 844,
   },
   burger: {
-    overflow: "hidden",
+    overflow: 'hidden',
     height: 844,
     width: 390,
     backgroundColor: Color.ivory,
