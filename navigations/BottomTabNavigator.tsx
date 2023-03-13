@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { StyleSheet, View, Image } from 'react-native';
+import { StyleSheet, View, Image, Text } from 'react-native';
 import { COLORS, ROUTES } from '../constants';
 import {
   Dashboard,
@@ -9,11 +9,15 @@ import {
   Profile,
   Recherche,
 } from '../screens';
+import AddButton from '../components/AddButton';
 
 const Tab = createBottomTabNavigator();
 
 const getIconColor = (focused) => ({
-  tintColor: focused ? COLORS.primary : COLORS.dark,
+  tintColor: focused ? COLORS.primary : COLORS.white,
+});
+const getTextColor = (focused) => ({
+  color: focused ? COLORS.primary : COLORS.white,
 });
 
 const BottomTabNavigator = () => {
@@ -40,6 +44,7 @@ const BottomTabNavigator = () => {
                 resizeMode="contain"
                 style={[styles.tabIcon, getIconColor(focused)]}
               />
+              <Text style={[getTextColor(focused)]}>Accueil</Text>
             </View>
           ),
         }}
@@ -54,10 +59,11 @@ const BottomTabNavigator = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabIconContainer}>
               <Image
-                source={require('../assets/formules.png')}
+                source={require('../assets/formule.png')}
                 resizeMode="contain"
                 style={[styles.tabIcon, getIconColor(focused)]}
               />
+              <Text style={[getTextColor(focused)]}>Formules</Text>
             </View>
           ),
         }}
@@ -69,6 +75,7 @@ const BottomTabNavigator = () => {
           tabBarItemStyle: {
             height: 0,
           },
+          tabBarButton: () => <AddButton />,
         }}
       />
       <Tab.Screen
@@ -85,6 +92,7 @@ const BottomTabNavigator = () => {
                 resizeMode="contain"
                 style={[styles.tabIcon, getIconColor(focused)]}
               />
+              <Text style={[getTextColor(focused)]}>Recherche</Text>
             </View>
           ),
         }}
@@ -103,6 +111,7 @@ const BottomTabNavigator = () => {
                 resizeMode="contain"
                 style={[styles.tabIcon, getIconColor(focused)]}
               />
+              <Text style={[getTextColor(focused)]}>Profile</Text>
             </View>
           ),
         }}
@@ -115,12 +124,12 @@ const styles = StyleSheet.create({
   tabBar: {
     position: 'absolute',
     padding: 0,
-    left: 16,
-    right: 16,
-    bottom: 32,
-    height: 56,
-    borderRadius: 16,
-    backgroundColor: COLORS.white,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    height: 86,
+    borderRadius: 0,
+    backgroundColor: COLORS.black,
     borderTopColor: 'transparent',
     shadowColor: COLORS.dark,
     shadowOffset: {
@@ -138,8 +147,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   tabIcon: {
-    width: 32,
-    height: 32,
+    width: 24,
+    height: 24,
+  },
+  tabIconText: {
+    fontSize: 8,
+    color: COLORS.white,
+    fontFamily: 'Inter',
   },
 });
 
