@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Text,
   StyleSheet,
@@ -6,14 +6,15 @@ import {
   Image,
   Pressable,
   TextInput,
-} from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import ProfileContainer from "../components/ProfileContainer";
-import DashboardSection from "../components/DashboardSection";
-import Alpha1Section from "../components/Alpha1Section";
-import LogoutContainer from "../components/LogoutContainer";
-import SergeKassiContainer from "../components/SergeKassiContainer";
-import { Margin, FontFamily, Color } from "../GlobalStyles";
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import ProfileContainer from '../../components/ProfileContainer';
+import DashboardSection from '../../components/DashboardSection';
+import Alpha1Section from '../../components/Alpha1Section';
+import LogoutContainer from '../../components/LogoutContainer';
+import SergeKassiContainer from '../../components/SergeKassiContainer';
+import { Margin, FontFamily, Color } from '../../GlobalStyles';
+import { StackNavigationProp } from '@react-navigation/stack';
 
 const ChangeMdp = () => {
   const navigation = useNavigation();
@@ -21,9 +22,9 @@ const ChangeMdp = () => {
   return (
     <View style={styles.changeMdp}>
       <ProfileContainer
-        onIconPromoPress={() => navigation.navigate("MesFormules1")}
-        onVectorPress={() => navigation.navigate("Recherche")}
-        onProfilePress={() => navigation.navigate("PROFILE")}
+        onIconPromoPress={() => {}}
+        onVectorPress={() => {}}
+        onProfilePress={() => {}}
       />
       <View style={[styles.statusBar, styles.statusBarPosition]}>
         <View style={styles.barsstatusTime}>
@@ -32,31 +33,41 @@ const ChangeMdp = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require("../assets/symbols.png")}
+          source={require('../assets/symbols.png')}
         />
       </View>
       <View style={[styles.groupParent, styles.statusBarPosition]}>
         <Image
           style={styles.groupIcon}
           resizeMode="cover"
-          source={require("../assets/group.png")}
+          source={require('../assets/group.png')}
         />
         <View style={[styles.groupContainer, styles.ml257]}>
           <View style={styles.iconParent}>
             <Image
               style={styles.icon}
               resizeMode="cover"
-              source={require("../assets/icon.png")}
+              source={require('../assets/icon.png')}
             />
-            <View style={[styles.rectangleParent, styles.arrowItemPosition]}>
-              <View style={[styles.instanceChild, styles.groupItemPosition]} />
+            <View
+              style={[
+                styles.rectangleParent,
+                styles.arrowItemPosition,
+              ]}
+            >
+              <View
+                style={[
+                  styles.instanceChild,
+                  styles.groupItemPosition,
+                ]}
+              />
               <Text style={[styles.text, styles.textTypo]}>7</Text>
             </View>
           </View>
           <Image
             style={[styles.imageIcon, styles.ml12]}
             resizeMode="cover"
-            source={require("../assets/image.png")}
+            source={require('../assets/image.png')}
           />
         </View>
       </View>
@@ -67,7 +78,10 @@ const ChangeMdp = () => {
       </View>
       <View style={styles.titre}>
         <Text
-          style={[styles.rcenteSouscription, styles.rcenteSouscriptionTypo]}
+          style={[
+            styles.rcenteSouscription,
+            styles.rcenteSouscriptionTypo,
+          ]}
         >
           Récente souscription
         </Text>
@@ -78,12 +92,19 @@ const ChangeMdp = () => {
       <Alpha1Section />
       <View style={styles.changeMdpChild} />
       <View style={[styles.menu, styles.menuPosition]}>
-        <View style={[styles.rectangleGroup, styles.frameChildLayout]}>
-          <View style={[styles.frameChild, styles.frameChildLayout]} />
+        <View
+          style={[styles.rectangleGroup, styles.frameChildLayout]}
+        >
+          <View
+            style={[styles.frameChild, styles.frameChildLayout]}
+          />
           <Image
-            style={[styles.icsharpCloseIcon, styles.icsharpCloseIconLayout]}
+            style={[
+              styles.icsharpCloseIcon,
+              styles.icsharpCloseIconLayout,
+            ]}
             resizeMode="cover"
-            source={require("../assets/icsharpclose.png")}
+            source={require('../assets/icsharpclose.png')}
           />
         </View>
         <LogoutContainer />
@@ -91,7 +112,9 @@ const ChangeMdp = () => {
         <View style={[styles.groupView, styles.lineIconLayout]}>
           <View style={styles.groupParent1}>
             <View style={styles.groupChildPosition}>
-              <View style={[styles.groupBg, styles.groupChildPosition]} />
+              <View
+                style={[styles.groupBg, styles.groupChildPosition]}
+              />
               <View
                 style={[
                   styles.iconSettingWrapper,
@@ -115,18 +138,23 @@ const ChangeMdp = () => {
                 <Image
                   style={[styles.groupItem, styles.groupItemPosition]}
                   resizeMode="cover"
-                  source={require("../assets/group-460.png")}
+                  source={require('../assets/group-460.png')}
                 />
                 <Text style={[styles.changLeMot, styles.motTypo]}>
                   Changé le mot de passe
                 </Text>
               </View>
               <View style={[styles.arrowLayout, styles.ml70]}>
-                <View style={[styles.arrowChild, styles.arrowChildLayout]} />
+                <View
+                  style={[styles.arrowChild, styles.arrowChildLayout]}
+                />
                 <Image
-                  style={[styles.arrowLayout, styles.arrowItemPosition]}
+                  style={[
+                    styles.arrowLayout,
+                    styles.arrowItemPosition,
+                  ]}
                   resizeMode="cover"
-                  source={require("../assets/vector-59.png")}
+                  source={require('../assets/vector-59.png')}
                 />
               </View>
             </View>
@@ -144,7 +172,7 @@ const ChangeMdp = () => {
                 <Image
                   style={styles.vectorIcon}
                   resizeMode="cover"
-                  source={require("../assets/vector2.png")}
+                  source={require('../assets/vector2.png')}
                 />
               </View>
               <Text style={[styles.motTypo, styles.ml16]}>
@@ -152,11 +180,13 @@ const ChangeMdp = () => {
               </Text>
             </View>
             <View style={[styles.arrowLayout, styles.ml41]}>
-              <View style={[styles.arrowChild, styles.arrowChildLayout]} />
+              <View
+                style={[styles.arrowChild, styles.arrowChildLayout]}
+              />
               <Image
                 style={styles.arrowItemPosition}
                 resizeMode="cover"
-                source={require("../assets/vector-591.png")}
+                source={require('../assets/vector-591.png')}
               />
             </View>
           </View>
@@ -172,21 +202,28 @@ const ChangeMdp = () => {
                 <Image
                   style={styles.vectorIcon1}
                   resizeMode="cover"
-                  source={require("../assets/vector3.png")}
+                  source={require('../assets/vector3.png')}
                 />
               </View>
-              <View style={[styles.motDePassePaiementWrapper, styles.ml22]}>
+              <View
+                style={[
+                  styles.motDePassePaiementWrapper,
+                  styles.ml22,
+                ]}
+              >
                 <Text style={[styles.motDePasse, styles.motTypo]}>
                   Mot de passe paiement
                 </Text>
               </View>
             </View>
             <View style={[styles.arrowLayout, styles.ml64]}>
-              <View style={[styles.arrowChild, styles.arrowChildLayout]} />
+              <View
+                style={[styles.arrowChild, styles.arrowChildLayout]}
+              />
               <Image
                 style={styles.arrowItemPosition}
                 resizeMode="cover"
-                source={require("../assets/vector-592.png")}
+                source={require('../assets/vector-592.png')}
               />
             </View>
           </View>
@@ -195,23 +232,31 @@ const ChangeMdp = () => {
               <Image
                 style={styles.groupInnerLayout}
                 resizeMode="cover"
-                source={require("../assets/group-1026.png")}
+                source={require('../assets/group-1026.png')}
               />
-              <Text style={[styles.motTypo, styles.ml16]}>A propos</Text>
+              <Text style={[styles.motTypo, styles.ml16]}>
+                A propos
+              </Text>
             </View>
             <View style={[styles.arrowLayout, styles.ml173]}>
-              <View style={[styles.arrowChild, styles.arrowChildLayout]} />
+              <View
+                style={[styles.arrowChild, styles.arrowChildLayout]}
+              />
               <Image
                 style={styles.arrowItemPosition}
                 resizeMode="cover"
-                source={require("../assets/vector-591.png")}
+                source={require('../assets/vector-591.png')}
               />
             </View>
           </View>
           <Image
-            style={[styles.lineIcon, styles.iconLayout, styles.lineIconLayout]}
+            style={[
+              styles.lineIcon,
+              styles.iconLayout,
+              styles.lineIconLayout,
+            ]}
             resizeMode="cover"
-            source={require("../assets/line.png")}
+            source={require('../assets/line.png')}
           />
         </View>
         <SergeKassiContainer />
@@ -266,45 +311,45 @@ const styles = StyleSheet.create({
   },
   statusBarPosition: {
     left: 16,
-    display: "none",
-    alignItems: "center",
-    flexDirection: "row",
-    position: "absolute",
+    display: 'none',
+    alignItems: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
   },
   arrowItemPosition: {
     left: 6,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   groupItemPosition: {
-    left: "0%",
-    position: "absolute",
+    left: '0%',
+    position: 'absolute',
   },
   textTypo: {
     fontFamily: FontFamily.interMedium,
-    fontWeight: "500",
-    textAlign: "left",
+    fontWeight: '500',
+    textAlign: 'left',
   },
   rcenteSouscriptionTypo: {
     color: Color.gray_100,
-    textAlign: "left",
-    fontWeight: "700",
+    textAlign: 'left',
+    fontWeight: '700',
   },
   menuPosition: {
     width: 391,
     top: 0,
     left: 0,
-    position: "absolute",
+    position: 'absolute',
     height: 844,
   },
   frameChildLayout: {
     height: 45,
-    position: "absolute",
+    position: 'absolute',
   },
   icsharpCloseIconLayout: {
     height: 30,
     width: 30,
-    position: "absolute",
+    position: 'absolute',
   },
   lineIconLayout: {
     width: 335,
@@ -315,11 +360,11 @@ const styles = StyleSheet.create({
     height: 40,
     top: 0,
     left: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   iconLayout: {
     height: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   iconLayout1: {
     width: 0,
@@ -330,9 +375,9 @@ const styles = StyleSheet.create({
     lineHeight: 24,
     letterSpacing: 1,
     fontFamily: FontFamily.interSemibold,
-    fontWeight: "600",
+    fontWeight: '600',
     fontSize: 14,
-    textAlign: "left",
+    textAlign: 'left',
   },
   arrowChildLayout: {
     width: 24,
@@ -349,32 +394,32 @@ const styles = StyleSheet.create({
   modalLayout: {
     height: 408,
     width: 356,
-    position: "absolute",
+    position: 'absolute',
   },
   time: {
     fontSize: 15,
     letterSpacing: 0,
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.interBold,
-    fontWeight: "700",
+    fontWeight: '700',
     color: Color.black,
   },
   barsstatusTime: {
     paddingHorizontal: 0,
     paddingVertical: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   symbolsIcon: {
     width: 68,
     height: 13,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   statusBar: {
     top: 7,
     right: 16,
-    display: "none",
-    alignItems: "center",
-    flexDirection: "row",
+    display: 'none',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   groupIcon: {
     width: 20,
@@ -385,26 +430,26 @@ const styles = StyleSheet.create({
     height: 22,
     left: 0,
     top: 11,
-    position: "absolute",
+    position: 'absolute',
   },
   instanceChild: {
-    height: "78.95%",
-    top: "21.05%",
-    right: "0%",
-    bottom: "0%",
+    height: '78.95%',
+    top: '21.05%',
+    right: '0%',
+    bottom: '0%',
     backgroundColor: Color.red_100,
     borderRadius: 12,
-    width: "100%",
+    width: '100%',
   },
   text: {
-    height: "84.21%",
-    width: "40%",
-    top: "0%",
-    left: "33.33%",
+    height: '84.21%',
+    width: '40%',
+    top: '0%',
+    left: '33.33%',
     fontSize: 10,
     lineHeight: 22,
     color: Color.white,
-    position: "absolute",
+    position: 'absolute',
   },
   rectangleParent: {
     width: 15,
@@ -419,30 +464,30 @@ const styles = StyleSheet.create({
     height: 48,
   },
   groupContainer: {
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   groupParent: {
     top: 42,
     width: 354,
-    display: "none",
-    alignItems: "center",
-    flexDirection: "row",
+    display: 'none',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   text1: {
     lineHeight: 18,
     fontSize: 16,
     color: Color.black,
     fontFamily: FontFamily.interMedium,
-    fontWeight: "500",
+    fontWeight: '500',
   },
   parent: {
     top: 301,
     left: 162,
-    display: "none",
-    alignItems: "center",
-    position: "absolute",
+    display: 'none',
+    alignItems: 'center',
+    position: 'absolute',
   },
   rcenteSouscription: {
     fontSize: 20,
@@ -456,14 +501,14 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: Color.gray_100,
     width: 306,
-    textAlign: "left",
+    textAlign: 'left',
   },
   titre: {
     top: 359,
     width: 306,
-    display: "none",
+    display: 'none',
     left: 16,
-    position: "absolute",
+    position: 'absolute',
   },
   changeMdpChild: {
     backgroundColor: Color.gainsboro_100,
@@ -471,8 +516,8 @@ const styles = StyleSheet.create({
     height: 848,
     top: 0,
     left: 0,
-    display: "none",
-    position: "absolute",
+    display: 'none',
+    position: 'absolute',
   },
   frameChild: {
     top: 1,
@@ -483,7 +528,7 @@ const styles = StyleSheet.create({
   icsharpCloseIcon: {
     left: 7,
     top: 9,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   rectangleGroup: {
     left: 345,
@@ -494,7 +539,7 @@ const styles = StyleSheet.create({
   menuChild: {
     height: 777,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
     backgroundColor: Color.ivory,
   },
   iconSettingChild: {
@@ -503,8 +548,8 @@ const styles = StyleSheet.create({
     backgroundColor: Color.darkslateblue,
     width: 25,
     height: 24,
-    display: "none",
-    position: "absolute",
+    display: 'none',
+    position: 'absolute',
   },
   iconSetting: {
     top: 0,
@@ -515,19 +560,19 @@ const styles = StyleSheet.create({
     top: 11,
   },
   groupItem: {
-    height: "75%",
-    width: "6.66%",
-    top: "12.5%",
-    right: "93.34%",
-    bottom: "12.5%",
-    maxWidth: "100%",
-    maxHeight: "100%",
-    overflow: "hidden",
+    height: '75%',
+    width: '6.66%',
+    top: '12.5%',
+    right: '93.34%',
+    bottom: '12.5%',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    overflow: 'hidden',
   },
   changLeMot: {
     left: 43,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   groupParent2: {
     width: 216,
@@ -537,8 +582,8 @@ const styles = StyleSheet.create({
     top: -6,
     left: -9,
     backgroundColor: Color.silver_100,
-    display: "none",
-    position: "absolute",
+    display: 'none',
+    position: 'absolute',
   },
   arrowLayout: {
     height: 12,
@@ -547,39 +592,39 @@ const styles = StyleSheet.create({
   changLeMotDePasse: {
     top: 8,
     left: 13,
-    alignItems: "center",
-    flexDirection: "row",
-    position: "absolute",
+    alignItems: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
   },
   groupParent1: {
     width: 305,
     height: 40,
     left: 7,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   groupInner: {
     top: 0,
     left: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   vectorIcon: {
     left: 12,
     width: 16,
     top: 9,
     height: 22,
-    position: "absolute",
+    position: 'absolute',
   },
   frameView: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   frameParent: {
     top: 64,
     left: 7,
-    alignItems: "center",
-    flexDirection: "row",
-    position: "absolute",
+    alignItems: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
   },
   vectorIcon1: {
     width: 14,
@@ -588,14 +633,14 @@ const styles = StyleSheet.create({
   vectorWrapper: {
     paddingHorizontal: 5,
     paddingVertical: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   motDePasse: {
     top: 0,
     left: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   motDePassePaiementWrapper: {
     width: 168,
@@ -605,16 +650,16 @@ const styles = StyleSheet.create({
     top: 128,
     left: 9,
     width: 324,
-    alignItems: "center",
-    flexDirection: "row",
-    position: "absolute",
+    alignItems: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
   },
   frameParent1: {
     top: 232,
     left: 7,
-    alignItems: "center",
-    flexDirection: "row",
-    position: "absolute",
+    alignItems: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
   },
   lineIcon: {
     top: 200,
@@ -622,19 +667,19 @@ const styles = StyleSheet.create({
   groupView: {
     top: 118,
     height: 272,
-    position: "absolute",
+    position: 'absolute',
   },
   menu: {
-    display: "none",
+    display: 'none',
   },
   changeMdpItem: {
     backgroundColor: Color.dimgray_300,
   },
   changeMdp: {
     flex: 1,
-    overflow: "hidden",
+    overflow: 'hidden',
     height: 844,
-    width: "100%",
+    width: '100%',
     backgroundColor: Color.ivory,
   },
 });

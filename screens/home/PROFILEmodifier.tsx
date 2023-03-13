@@ -1,19 +1,21 @@
-import * as React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import Section7 from "../components/Section7";
-import ProfileCard from "../components/ProfileCard";
-import GroupContainer from "../components/GroupContainer";
-import { Margin, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Section7 from '../../components/Section7';
+import ProfileCard from '../../components/ProfileCard';
+import GroupContainer from '../../components/GroupContainer';
+import { Margin, FontFamily, Color } from '../../GlobalStyles';
 
 const PROFILEmodifier = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.profilemodifier}>
-      <Section7 icon={require("../assets/icon1.png")} />
+      <Section7 icon={require('../assets/icon1.png')} />
       <View style={[styles.text, styles.textPosition]}>
-        <Text style={[styles.headline, styles.timeTypo]}>Profile</Text>
+        <Text style={[styles.headline, styles.timeTypo]}>
+          Profile
+        </Text>
       </View>
       <ProfileCard />
       <View style={[styles.statusBar, styles.textPosition]}>
@@ -23,14 +25,14 @@ const PROFILEmodifier = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require("../assets/symbols1.png")}
+          source={require('../assets/symbols1.png')}
         />
       </View>
       <GroupContainer
-        onIconPromoPress={() => navigation.navigate("MesFormules1")}
-        onVectorPress={() => navigation.navigate("Recherche")}
-        onProfilePress={() => navigation.navigate("PROFILE")}
-        onAddPress={() => navigation.navigate("Souscription")}
+        onIconPromoPress={() => {}}
+        onVectorPress={() => {}}
+        onProfilePress={() => {}}
+        onAddPress={() => {}}
       />
     </View>
   );
@@ -41,13 +43,13 @@ const styles = StyleSheet.create({
     marginLeft: Margin.m_221xl,
   },
   textPosition: {
-    position: "absolute",
-    flexDirection: "row",
+    position: 'absolute',
+    flexDirection: 'row',
   },
   timeTypo: {
-    textAlign: "left",
+    textAlign: 'left',
     fontFamily: FontFamily.interBold,
-    fontWeight: "700",
+    fontWeight: '700',
   },
   headline: {
     fontSize: 30,
@@ -57,7 +59,7 @@ const styles = StyleSheet.create({
   text: {
     top: 103,
     left: 11,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   time: {
     fontSize: 15,
@@ -67,27 +69,27 @@ const styles = StyleSheet.create({
   barsstatusTime: {
     paddingHorizontal: 0,
     paddingVertical: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   symbolsIcon: {
     width: 68,
     height: 13,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   statusBar: {
     top: 7,
     right: 21,
     left: 22,
-    alignItems: "center",
-    display: "none",
-    flexDirection: "row",
+    alignItems: 'center',
+    display: 'none',
+    flexDirection: 'row',
   },
   profilemodifier: {
     backgroundColor: Color.ivory,
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 1002,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
 });
 

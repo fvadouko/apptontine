@@ -1,15 +1,15 @@
-import * as React from "react";
-import { Text, StyleSheet, View, Image } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import ProfileContainer from "../components/ProfileContainer";
-import Section7 from "../components/Section7";
-import DashboardSection from "../components/DashboardSection";
-import Alpha1Section from "../components/Alpha1Section";
-import LogoutContainer from "../components/LogoutContainer";
-import AboutContainer from "../components/AboutContainer";
-import SergeKassiContainer from "../components/SergeKassiContainer";
-import AppLockContainer from "../components/AppLockContainer";
-import { Margin, Color, FontFamily } from "../GlobalStyles";
+import * as React from 'react';
+import { Text, StyleSheet, View, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import ProfileContainer from '../../components/ProfileContainer';
+import Section7 from '../../components/Section7';
+import DashboardSection from '../../components/DashboardSection';
+import Alpha1Section from '../../components/Alpha1Section';
+import LogoutContainer from '../../components/LogoutContainer';
+import AboutContainer from '../../components/AboutContainer';
+import SergeKassiContainer from '../../components/SergeKassiContainer';
+import AppLockContainer from '../../components/AppLockContainer';
+import { Margin, Color, FontFamily } from '../../GlobalStyles';
 
 const VerroueApp = () => {
   const navigation = useNavigation();
@@ -17,27 +17,31 @@ const VerroueApp = () => {
   return (
     <View style={styles.verroueApp}>
       <ProfileContainer
-        onIconPromoPress={() => navigation.navigate("MesFormules1")}
-        onVectorPress={() => navigation.navigate("Recherche")}
-        onProfilePress={() => navigation.navigate("PROFILE")}
+        onIconPromoPress={() => {}}
+        onVectorPress={() => {}}
+        onProfilePress={() => {}}
       />
       <View style={[styles.statusBar, styles.parentFlexBox]}>
         <View style={styles.barsstatusTime}>
-          <Text style={[styles.time, styles.timeFlexBox, styles.timeTypo]}>
+          <Text
+            style={[styles.time, styles.timeFlexBox, styles.timeTypo]}
+          >
             19:27
           </Text>
         </View>
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require("../assets/symbols.png")}
+          source={require('../assets/symbols.png')}
         />
       </View>
-      <Section7 icon={require("../assets/icon.png")} />
+      <Section7 icon={require('../assets/icon.png')} />
       <DashboardSection propDisplay="none" />
       <View style={[styles.parent, styles.parentFlexBox]}>
         <Text style={[styles.text, styles.timeFlexBox]}>3</Text>
-        <Text style={[styles.text, styles.timeFlexBox]}>Scr/jour</Text>
+        <Text style={[styles.text, styles.timeFlexBox]}>
+          Scr/jour
+        </Text>
       </View>
       <View style={styles.titre}>
         <Text
@@ -62,19 +66,27 @@ const VerroueApp = () => {
       <Alpha1Section propDisplay="none" />
       <View style={styles.verroueAppChild} />
       <View style={[styles.menu, styles.menuPosition]}>
-        <View style={[styles.rectangleParent, styles.frameChildLayout]}>
+        <View
+          style={[styles.rectangleParent, styles.frameChildLayout]}
+        >
           <View
-            style={[styles.frameChild, styles.frameChildLayout, styles.childBg]}
+            style={[
+              styles.frameChild,
+              styles.frameChildLayout,
+              styles.childBg,
+            ]}
           />
           <Image
             style={styles.icsharpCloseIcon}
             resizeMode="cover"
-            source={require("../assets/icsharpclose.png")}
+            source={require('../assets/icsharpclose.png')}
           />
         </View>
         <LogoutContainer />
         <View style={[styles.menuChild, styles.childBg]} />
-        <AboutContainer productId={require("../assets/group-1026.png")} />
+        <AboutContainer
+          productId={require('../assets/group-1026.png')}
+        />
         <SergeKassiContainer />
       </View>
       <View style={[styles.verroueAppItem, styles.menuPosition]} />
@@ -91,33 +103,33 @@ const styles = StyleSheet.create({
     marginTop: Margin.m_9xs,
   },
   parentFlexBox: {
-    alignItems: "center",
-    display: "none",
-    position: "absolute",
+    alignItems: 'center',
+    display: 'none',
+    position: 'absolute',
   },
   timeFlexBox: {
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.black,
   },
   timeTypo: {
     fontFamily: FontFamily.interBold,
-    fontWeight: "700",
+    fontWeight: '700',
   },
   rsumDesDerniresClr: {
     color: Color.gray_100,
     width: 306,
-    textAlign: "left",
+    textAlign: 'left',
   },
   menuPosition: {
     width: 391,
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
     height: 844,
   },
   frameChildLayout: {
     height: 45,
-    position: "absolute",
+    position: 'absolute',
   },
   childBg: {
     backgroundColor: Color.ivory,
@@ -130,31 +142,31 @@ const styles = StyleSheet.create({
   barsstatusTime: {
     paddingHorizontal: 0,
     paddingVertical: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   symbolsIcon: {
     width: 68,
     height: 13,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   statusBar: {
     top: 7,
     right: 16,
-    display: "none",
-    flexDirection: "row",
+    display: 'none',
+    flexDirection: 'row',
     left: 16,
-    alignItems: "center",
+    alignItems: 'center',
   },
   text: {
     fontSize: 16,
     lineHeight: 18,
-    fontWeight: "500",
+    fontWeight: '500',
     fontFamily: FontFamily.interMedium,
   },
   parent: {
     top: 301,
     left: 162,
-    display: "none",
+    display: 'none',
   },
   rcenteSouscription: {
     fontSize: 20,
@@ -167,9 +179,9 @@ const styles = StyleSheet.create({
   titre: {
     top: 359,
     width: 306,
-    display: "none",
+    display: 'none',
     left: 16,
-    position: "absolute",
+    position: 'absolute',
   },
   verroueAppChild: {
     backgroundColor: Color.gainsboro_100,
@@ -177,8 +189,8 @@ const styles = StyleSheet.create({
     height: 848,
     left: 0,
     top: 0,
-    display: "none",
-    position: "absolute",
+    display: 'none',
+    position: 'absolute',
   },
   frameChild: {
     top: 1,
@@ -190,8 +202,8 @@ const styles = StyleSheet.create({
     left: 7,
     width: 30,
     height: 30,
-    position: "absolute",
-    overflow: "hidden",
+    position: 'absolute',
+    overflow: 'hidden',
   },
   rectangleParent: {
     left: 345,
@@ -204,18 +216,18 @@ const styles = StyleSheet.create({
     height: 777,
     left: 0,
     top: 0,
-    position: "absolute",
+    position: 'absolute',
   },
   menu: {
-    display: "none",
+    display: 'none',
   },
   verroueAppItem: {
     backgroundColor: Color.dimgray_300,
   },
   verroueApp: {
     flex: 1,
-    width: "100%",
-    overflow: "hidden",
+    width: '100%',
+    overflow: 'hidden',
     height: 844,
     backgroundColor: Color.ivory,
   },

@@ -1,14 +1,14 @@
-import * as React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
-import Section7 from "../components/Section7";
-import FcfaCard from "../components/FcfaCard";
-import DefaultContainer1 from "../components/DefaultContainer1";
-import { Margin, Color, FontFamily } from "../GlobalStyles";
+import * as React from 'react';
+import { View, Text, StyleSheet, Image } from 'react-native';
+import Section7 from '../../components/Section7';
+import FcfaCard from '../../components/FcfaCard';
+import DefaultContainer1 from '../../components/DefaultContainer1';
+import { Margin, Color, FontFamily } from '../../GlobalStyles';
 
 const MesFormules1 = () => {
   return (
     <View style={styles.mesFormules}>
-      <Section7 icon={require("../assets/icon2.png")} />
+      <Section7 icon={require('../assets/icon2.png')} />
       <View style={styles.frameParent}>
         <View style={styles.mesFormulesWrapper}>
           <Text style={[styles.mesFormules1, styles.timeFlexBox]}>
@@ -24,7 +24,7 @@ const MesFormules1 = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require("../assets/symbols.png")}
+          source={require('../assets/symbols.png')}
         />
       </View>
       <DefaultContainer1 />
@@ -40,55 +40,55 @@ const styles = StyleSheet.create({
     marginLeft: Margin.m_221xl,
   },
   timeFlexBox: {
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.black,
   },
   mesFormules1: {
     fontSize: 30,
     lineHeight: 22,
-    fontWeight: "500",
+    fontWeight: '500',
     fontFamily: FontFamily.interMedium,
   },
   mesFormulesWrapper: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   frameParent: {
     top: 112,
     left: 16,
     width: 359,
-    position: "absolute",
+    position: 'absolute',
   },
   time: {
     fontSize: 15,
     letterSpacing: 0,
-    fontWeight: "700",
+    fontWeight: '700',
     fontFamily: FontFamily.interBold,
   },
   barsstatusTime: {
     paddingHorizontal: 0,
     paddingVertical: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   symbolsIcon: {
     width: 68,
     height: 13,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   statusBar: {
     top: 7,
     right: 21,
     left: 22,
-    alignItems: "center",
-    display: "none",
-    flexDirection: "row",
-    position: "absolute",
+    alignItems: 'center',
+    display: 'none',
+    flexDirection: 'row',
+    position: 'absolute',
   },
   mesFormules: {
     backgroundColor: Color.ivory,
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 844,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
 });
 

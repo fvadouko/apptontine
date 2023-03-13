@@ -1,11 +1,11 @@
-import * as React from "react";
-import { Text, StyleSheet, View, Image } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import Section7 from "../components/Section7";
-import SubscriptionSection from "../components/SubscriptionSection";
-import CodeParrainContainer from "../components/CodeParrainContainer";
-import DefaultContainer from "../components/DefaultContainer";
-import { Margin, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react';
+import { Text, StyleSheet, View, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import Section7 from '../../components/Section7';
+import SubscriptionSection from '../../components/SubscriptionSection';
+import CodeParrainContainer from '../../components/CodeParrainContainer';
+import DefaultContainer from '../../components/DefaultContainer';
+import { Margin, FontFamily, Color } from '../../GlobalStyles';
 
 const Souscriptionmodal = () => {
   const navigation = useNavigation();
@@ -19,27 +19,27 @@ const Souscriptionmodal = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require("../assets/symbols.png")}
+          source={require('../assets/symbols.png')}
         />
       </View>
-      <Section7 icon={require("../assets/icon2.png")} />
+      <Section7 icon={require('../assets/icon2.png')} />
       <SubscriptionSection
-        onIconPress={() => navigation.navigate("Souscriptionmodal")}
-        onIconPress1={() => navigation.navigate("Souscriptionmodal")}
-        onIconPress2={() => navigation.navigate("Souscriptionmodal")}
-        onIconPress3={() => navigation.navigate("Souscriptionmodal")}
-        onIconPress4={() => navigation.navigate("Souscriptionmodal")}
+        onIconPress={() => {}}
+        onIconPress1={() => {}}
+        onIconPress2={() => {}}
+        onIconPress3={() => {}}
+        onIconPress4={() => {}}
       />
       <View style={styles.souscriptionmodalChild} />
       <CodeParrainContainer
-        onAnnulPress={() => navigation.navigate("Souscription")}
-        onModifierPress={() => navigation.navigate("Souscriptionmodal1")}
+        onAnnulPress={() => {}}
+        onModifierPress={() => {}}
       />
       <DefaultContainer
-        onIconPromoPress={() => navigation.navigate("MesFormules1")}
-        onVectorPress={() => navigation.navigate("Recherche")}
-        onProfilePress={() => navigation.navigate("PROFILE")}
-        onAddPress={() => navigation.navigate("Souscription")}
+        onIconPromoPress={() => {}}
+        onVectorPress={() => {}}
+        onProfilePress={() => {}}
+        onAddPress={() => {}}
       />
     </View>
   );
@@ -52,43 +52,43 @@ const styles = StyleSheet.create({
   time: {
     fontSize: 15,
     letterSpacing: 0,
-    fontWeight: "700",
+    fontWeight: '700',
     fontFamily: FontFamily.interBold,
     color: Color.black,
-    textAlign: "left",
+    textAlign: 'left',
   },
   barsstatusTime: {
     paddingHorizontal: 0,
     paddingVertical: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   symbolsIcon: {
     width: 68,
     height: 13,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   statusBar: {
     top: 7,
     right: 16,
     left: 16,
-    alignItems: "center",
-    display: "none",
-    flexDirection: "row",
-    position: "absolute",
+    alignItems: 'center',
+    display: 'none',
+    flexDirection: 'row',
+    position: 'absolute',
   },
   souscriptionmodalChild: {
     top: 0,
     left: 0,
     backgroundColor: Color.gray_300,
     width: 390,
-    position: "absolute",
+    position: 'absolute',
     height: 844,
   },
   souscriptionmodal: {
     backgroundColor: Color.ivory,
     flex: 1,
-    width: "100%",
-    overflow: "hidden",
+    width: '100%',
+    overflow: 'hidden',
     height: 844,
   },
 });

@@ -1,11 +1,17 @@
-import * as React from "react";
-import { View, Pressable, Image, StyleSheet, Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import ViewToday from "../components/ViewToday";
-import HierView from "../components/HierView";
-import ViewDatePicker from "../components/ViewDatePicker";
-import Group239702Container from "../components/Group239702Container";
-import { Margin, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react';
+import {
+  View,
+  Pressable,
+  Image,
+  StyleSheet,
+  Text,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import ViewToday from '../../components/ViewToday';
+import HierView from '../../components/HierView';
+import ViewDatePicker from '../../components/ViewDatePicker';
+import Group239702Container from '../../components/Group239702Container';
+import { Margin, FontFamily, Color } from '../../GlobalStyles';
 
 const Notification1 = () => {
   const navigation = useNavigation();
@@ -13,15 +19,12 @@ const Notification1 = () => {
   return (
     <View style={styles.notification}>
       <View style={styles.frameParent}>
-        <Pressable
-          style={styles.headerWrapper}
-          onPress={() => navigation.navigate("Dashboard")}
-        >
+        <Pressable style={styles.headerWrapper} onPress={() => {}}>
           <View style={styles.header}>
             <Image
               style={styles.icon}
               resizeMode="cover"
-              source={require("../assets/icon7.png")}
+              source={require('../assets/icon7.png')}
             />
             <Text style={[styles.lesNotifications, styles.ml84]}>
               Les notifications
@@ -39,13 +42,13 @@ const Notification1 = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require("../assets/symbols4.png")}
+          source={require('../assets/symbols4.png')}
         />
       </View>
       <Group239702Container
-        productIds={require("../assets/home3.png")}
-        productIds24x24={require("../assets/vector7.png")}
-        productIds24x24x={require("../assets/profile5.png")}
+        productIds={require('../assets/home3.png')}
+        productIds24x24={require('../assets/vector7.png')}
+        productIds24x24x={require('../assets/profile5.png')}
         propTop={847}
         propColor="#f25650"
         propColor1="rgba(255, 255, 255, 0.7)"
@@ -53,10 +56,10 @@ const Notification1 = () => {
         propBackgroundColor="rgba(255, 255, 255, 0.7)"
         propLeft={23}
         propTop1={0}
-        onIconPromoPress={() => navigation.navigate("MesFormules1")}
-        onVectorPress={() => navigation.navigate("Recherche")}
-        onProfilePress={() => navigation.navigate("PROFILE")}
-        onAddPress={() => navigation.navigate("Souscription")}
+        onIconPromoPress={() => {}}
+        onVectorPress={() => {}}
+        onProfilePress={() => {}}
+        onAddPress={() => {}}
       />
     </View>
   );
@@ -76,63 +79,63 @@ const styles = StyleSheet.create({
   lesNotifications: {
     fontSize: 16,
     letterSpacing: 1,
-    fontWeight: "500",
+    fontWeight: '500',
     fontFamily: FontFamily.interMedium,
-    textAlign: "center",
+    textAlign: 'center',
     width: 170,
     height: 24,
     color: Color.black,
   },
   header: {
-    flexDirection: "row",
-    alignItems: "center",
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   headerWrapper: {
     top: 37,
     left: 15,
-    justifyContent: "center",
-    alignItems: "center",
-    position: "absolute",
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
   },
   frameParent: {
     top: 0,
     left: 0,
     width: 389,
     height: 869,
-    position: "absolute",
+    position: 'absolute',
     backgroundColor: Color.ivory,
   },
   time: {
     fontSize: 15,
     letterSpacing: 0,
-    fontWeight: "700",
+    fontWeight: '700',
     fontFamily: FontFamily.interBold,
-    textAlign: "left",
+    textAlign: 'left',
     color: Color.black,
   },
   barsstatusTime: {
     paddingHorizontal: 0,
     paddingVertical: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   symbolsIcon: {
     width: 68,
     height: 13,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   statusBar: {
     top: 7,
     right: 21,
     left: 22,
-    flexDirection: "row",
-    alignItems: "center",
-    position: "absolute",
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'absolute',
   },
   notification: {
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 944,
-    overflow: "hidden",
+    overflow: 'hidden',
     backgroundColor: Color.ivory,
   },
 });
