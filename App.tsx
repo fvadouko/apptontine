@@ -14,7 +14,7 @@ import MesFormules from './screens/home/MesFormules';
 import MesFormules1 from './screens/home/MesFormules1';
 import Recherche from './screens/home/Recherche';
 import Souscription from './screens/home/Souscription';
-import PROFILE from './screens/home/PROFILE';
+import PROFILE from './screens/home/Profile';
 import VerroueApp1 from './screens/home/VerroueApp1';
 // import Burger from './screens/home/home/Burger';
 import Dashboard from './screens/home/Dashboard';
@@ -29,6 +29,7 @@ import {
   Pressable,
   TouchableOpacity,
 } from 'react-native';
+import AuthNavigator from './navigations/AuthNavigator';
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] =
@@ -58,107 +59,10 @@ const App = () => {
   }
 
   return (
-    <>
-      <NavigationContainer>
-        {hideSplashScreen ? (
-          <Stack.Navigator screenOptions={{ headerShown: false }}>
-            <Stack.Screen
-              name="Login"
-              component={Login}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Acceuil2"
-              component={Acceuil2}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ChangeMdp"
-              component={ChangeMdp}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="VerroueApp"
-              component={VerroueApp}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PROFILEmodifier"
-              component={PROFILEmodifier}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Souscriptionmodal"
-              component={Souscriptionmodal}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Souscriptionmodal1"
-              component={Souscriptionmodal1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Souscriptioncode"
-              component={Souscriptioncode}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ListeDesFeuillesDisponible"
-              component={ListeDesFeuillesDisponible}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MesFormules"
-              component={MesFormules}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="MesFormules1"
-              component={MesFormules1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Recherche"
-              component={Recherche}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Souscription"
-              component={Souscription}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="PROFILE"
-              component={PROFILE}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="VerroueApp1"
-              component={VerroueApp1}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Dashboard"
-              component={Dashboard}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SignUp"
-              component={SignUp}
-              options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-              name="Notification"
-              component={Notification1}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator>
-        ) : (
-          <Acceuil2 />
-        )}
-      </NavigationContainer>
-    </>
+    <NavigationContainer>
+      {/* {isAuthenticated ? AuthNavigator : DrawerNavigator } */}
+      <AuthNavigator />
+    </NavigationContainer>
   );
 };
 export default App;

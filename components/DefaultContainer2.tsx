@@ -1,18 +1,33 @@
-import * as React from "react";
-import { Text, StyleSheet, View, Image, Pressable } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { Margin, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react';
+import {
+  Text,
+  StyleSheet,
+  View,
+  Image,
+  Pressable,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Margin, FontFamily, Color } from '../GlobalStyles';
+import { navigationProps } from '..';
 
 const DefaultContainer2 = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<navigationProps>();
 
   return (
     <View style={styles.group239702default}>
       <View style={[styles.bottomBar, styles.bottomBarPosition]}>
         <View style={styles.titreIcones}>
           <View style={styles.acceuilParent}>
-            <Text style={[styles.acceuil, styles.acceuilTypo]}>Acceuil</Text>
-            <Text style={[styles.formules, styles.ml30, styles.acceuilTypo]}>
+            <Text style={[styles.acceuil, styles.acceuilTypo]}>
+              Acceuil
+            </Text>
+            <Text
+              style={[
+                styles.formules,
+                styles.ml30,
+                styles.acceuilTypo,
+              ]}
+            >
               Formules
             </Text>
           </View>
@@ -20,7 +35,13 @@ const DefaultContainer2 = () => {
             <Text style={[styles.acceuil, styles.acceuilTypo]}>
               Souscription
             </Text>
-            <Text style={[styles.acceuil, styles.ml29, styles.acceuilTypo]}>
+            <Text
+              style={[
+                styles.acceuil,
+                styles.ml29,
+                styles.acceuilTypo,
+              ]}
+            >
               Profil
             </Text>
           </View>
@@ -29,17 +50,17 @@ const DefaultContainer2 = () => {
           <View style={styles.homeParent}>
             <Pressable
               style={styles.home}
-              onPress={() => navigation.navigate("Dashboard")}
+              onPress={() => navigation.navigate('Dashboard')}
             >
               <Image
                 style={styles.iconLayout1}
                 resizeMode="cover"
-                source={require("../assets/home2.png")}
+                source={require('../assets/home.png')}
               />
             </Pressable>
             <Pressable
               style={[styles.home, styles.ml50]}
-              onPress={() => navigation.navigate("MesFormules1")}
+              onPress={() => navigation.navigate('MesFormules1')}
             >
               <View
                 style={[
@@ -54,22 +75,22 @@ const DefaultContainer2 = () => {
           <View style={[styles.acceuilParent, styles.ml145]}>
             <Pressable
               style={styles.home}
-              onPress={() => navigation.navigate("Recherche")}
+              onPress={() => navigation.navigate('Recherche')}
             >
               <Image
                 style={styles.iconLayout1}
                 resizeMode="cover"
-                source={require("../assets/vector.png")}
+                source={require('../assets/vector.png')}
               />
             </Pressable>
             <Pressable
               style={[styles.home, styles.ml50]}
-              onPress={() => navigation.navigate("PROFILE")}
+              onPress={() => navigation.navigate('Profile')}
             >
               <Image
                 style={styles.iconLayout}
                 resizeMode="cover"
-                source={require("../assets/profile2.png")}
+                source={require('../assets/profile2.png')}
               />
             </Pressable>
           </View>
@@ -77,12 +98,12 @@ const DefaultContainer2 = () => {
       </View>
       <Pressable
         style={[styles.add, styles.addPosition]}
-        onPress={() => navigation.navigate("Souscription")}
+        onPress={() => navigation.navigate('Souscription')}
       >
         <Image
           style={[styles.icon3, styles.iconLayout]}
           resizeMode="cover"
-          source={require("../assets/add1.png")}
+          source={require('../assets/add1.png')}
         />
       </Pressable>
     </View>
@@ -106,30 +127,30 @@ const styles = StyleSheet.create({
     marginLeft: Margin.m_126xl,
   },
   bottomBarPosition: {
-    left: "0%",
-    bottom: "0%",
-    right: "0%",
+    left: '0%',
+    bottom: '0%',
+    right: '0%',
   },
   acceuilTypo: {
-    textAlign: "center",
+    textAlign: 'center',
     fontFamily: FontFamily.dMSansMedium,
-    fontWeight: "500",
+    fontWeight: '500',
     lineHeight: 15,
     letterSpacing: -0.2,
     fontSize: 11,
   },
   addPosition: {
-    top: "0%",
-    position: "absolute",
+    top: '0%',
+    position: 'absolute',
   },
   iconLayout1: {
-    height: "100%",
-    width: "100%",
+    height: '100%',
+    width: '100%',
   },
   iconLayout: {
-    overflow: "hidden",
-    height: "100%",
-    width: "100%",
+    overflow: 'hidden',
+    height: '100%',
+    width: '100%',
   },
   acceuil: {
     color: Color.gray_500,
@@ -138,18 +159,18 @@ const styles = StyleSheet.create({
     color: Color.white,
   },
   acceuilParent: {
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   souscriptionParent: {
     width: 125,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   titreIcones: {
     top: 42,
     left: 18,
     width: 348,
-    flexDirection: "row",
-    position: "absolute",
+    flexDirection: 'row',
+    position: 'absolute',
   },
   home: {
     width: 24,
@@ -159,44 +180,44 @@ const styles = StyleSheet.create({
     backgroundColor: Color.white,
   },
   homeParent: {
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   icones: {
     top: 10,
     left: 22,
     width: 347,
-    flexDirection: "row",
-    position: "absolute",
+    flexDirection: 'row',
+    position: 'absolute',
   },
   bottomBar: {
-    height: "69.07%",
-    top: "30.93%",
+    height: '69.07%',
+    top: '30.93%',
     backgroundColor: Color.gray_100,
-    width: "100%",
-    left: "0%",
-    bottom: "0%",
-    right: "0%",
-    position: "absolute",
+    width: '100%',
+    left: '0%',
+    bottom: '0%',
+    right: '0%',
+    position: 'absolute',
   },
   icon3: {
-    maxWidth: "100%",
-    maxHeight: "100%",
+    maxWidth: '100%',
+    maxHeight: '100%',
   },
   add: {
-    left: "41.54%",
-    right: "43.08%",
-    bottom: "38.14%",
-    width: "15.38%",
-    height: "61.86%",
+    left: '41.54%',
+    right: '43.08%',
+    bottom: '38.14%',
+    width: '15.38%',
+    height: '61.86%',
   },
   group239702default: {
     top: 747,
     left: 0,
     width: 390,
     height: 97,
-    display: "none",
-    position: "absolute",
+    display: 'none',
+    position: 'absolute',
   },
 });
 

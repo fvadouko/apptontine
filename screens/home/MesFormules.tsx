@@ -62,7 +62,7 @@ const MesFormules = () => {
         </View>
       </View>
       <Group239702Container
-        productIds={require('../../assets/home2.png')}
+        productIds={require('../../assets/home.png')}
         productIds24x24={require('../../assets/vector.png')}
         productIds24x24x={require('../../assets/profile.png')}
         propTop={747}

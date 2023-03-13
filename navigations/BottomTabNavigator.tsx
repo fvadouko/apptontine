@@ -36,7 +36,7 @@ const BottomTabNavigator = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabIconContainer}>
               <Image
-                source={require('../../assets/home@3x.png')}
+                source={require('../assets/home.png')}
                 resizeMode="contain"
                 style={[styles.tabIcon, getIconColor(focused)]}
               />
@@ -54,7 +54,7 @@ const BottomTabNavigator = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabIconContainer}>
               <Image
-                source={require('../../assets/formules.png')}
+                source={require('../assets/formules.png')}
                 resizeMode="contain"
                 style={[styles.tabIcon, getIconColor(focused)]}
               />
@@ -81,7 +81,7 @@ const BottomTabNavigator = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabIconContainer}>
               <Image
-                source={require('../../assets/vector7@3x.png')}
+                source={require('../assets/vector7.png')}
                 resizeMode="contain"
                 style={[styles.tabIcon, getIconColor(focused)]}
               />
@@ -99,7 +99,7 @@ const BottomTabNavigator = () => {
           tabBarIcon: ({ focused }) => (
             <View style={styles.tabIconContainer}>
               <Image
-                source={require('../../assets/profile@3x.png')}
+                source={require('../assets/profile.png')}
                 resizeMode="contain"
                 style={[styles.tabIcon, getIconColor(focused)]}
               />
