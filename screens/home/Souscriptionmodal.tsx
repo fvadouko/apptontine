@@ -19,10 +19,10 @@ const Souscriptionmodal = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require('../assets/symbols.png')}
+          source={require('../../assets/symbols.png')}
         />
       </View>
-      <Section7 icon={require('../assets/icon2.png')} />
+      <Section7 icon={require('../../assets/icon2.png')} />
       <SubscriptionSection
         onIconPress={() => {}}
         onIconPress1={() => {}}

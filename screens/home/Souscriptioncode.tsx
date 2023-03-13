@@ -19,10 +19,10 @@ const Souscriptioncode = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require('../assets/symbols2.png')}
+          source={require('../../assets/symbols2.png')}
         />
       </View>
-      <Section7 icon={require('../assets/icon1.png')} />
+      <Section7 icon={require('../../assets/icon1.png')} />
       <View style={[styles.frameParent, styles.statusBarPosition]}>
         <View style={styles.souscriptionWrapper}>
           <Text style={[styles.souscription, styles.timeFlexBox]}>
@@ -32,9 +32,9 @@ const Souscriptioncode = () => {
         <FormListContainer />
       </View>
       <Group239702Container
-        productIds={require('../assets/home1.png')}
-        productIds24x24={require('../assets/vector5.png')}
-        productIds24x24x={require('../assets/profile3.png')}
+        productIds={require('../../assets/home1.png')}
+        productIds24x24={require('../../assets/vector5.png')}
+        productIds24x24x={require('../../assets/profile3.png')}
         onIconPromoPress={() => {}}
         onVectorPress={() => {}}
         onProfilePress={() => {}}

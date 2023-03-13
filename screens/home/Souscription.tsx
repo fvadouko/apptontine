@@ -11,7 +11,7 @@ const Souscription = () => {
 
   return (
     <View style={styles.souscription}>
-      <Section7 icon={require('../assets/icon2.png')} />
+      <Section7 icon={require('../../assets/icon2.png')} />
       <SubscriptionSection
         onIconPress={() => {}}
         onIconPress1={() => {}}
@@ -26,7 +26,7 @@ const Souscription = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require('../assets/symbols.png')}
+          source={require('../../assets/symbols.png')}
         />
       </View>
       <DefaultContainer2 />

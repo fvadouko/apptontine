@@ -24,7 +24,7 @@ const Notification1 = () => {
             <Image
               style={styles.icon}
               resizeMode="cover"
-              source={require('../assets/icon7.png')}
+              source={require('../../assets/icon7.png')}
             />
             <Text style={[styles.lesNotifications, styles.ml84]}>
               Les notifications
@@ -42,13 +42,13 @@ const Notification1 = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require('../assets/symbols4.png')}
+          source={require('../../assets/symbols4.png')}
         />
       </View>
       <Group239702Container
-        productIds={require('../assets/home3.png')}
-        productIds24x24={require('../assets/vector7.png')}
-        productIds24x24x={require('../assets/profile5.png')}
+        productIds={require('../../assets/home3.png')}
+        productIds24x24={require('../../assets/vector7.png')}
+        productIds24x24x={require('../../assets/profile5.png')}
         propTop={847}
         propColor="#f25650"
         propColor1="rgba(255, 255, 255, 0.7)"

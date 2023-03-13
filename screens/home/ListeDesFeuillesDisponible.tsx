@@ -13,9 +13,9 @@ const ListeDesFeuillesDisponible = () => {
   return (
     <View style={styles.listeDesFeuillesDisponible}>
       <Group239702Container
-        productIds={require('../assets/home2.png')}
-        productIds24x24={require('../assets/vector.png')}
-        productIds24x24x={require('../assets/profile.png')}
+        productIds={require('../../assets/home2.png')}
+        productIds24x24={require('../../assets/vector.png')}
+        productIds24x24x={require('../../assets/profile.png')}
         propTop={747}
         propColor="rgba(255, 255, 255, 0.7)"
         propColor1="#f25650"
@@ -36,10 +36,10 @@ const ListeDesFeuillesDisponible = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require('../assets/symbols.png')}
+          source={require('../../assets/symbols.png')}
         />
       </View>
-      <Section7 icon={require('../assets/icon2.png')} />
+      <Section7 icon={require('../../assets/icon2.png')} />
       <View style={styles.modalPopWrapper}>
         <Alpha1Container />
       </View>

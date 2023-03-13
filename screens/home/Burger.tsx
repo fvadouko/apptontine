@@ -35,7 +35,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
               styles.frameParentPosition,
             ]}
             resizeMode="cover"
-            source={require('../assets/icsharpclose.png')}
+            source={require('../../assets/icsharpclose.png')}
           />
         </Pressable>
         <View style={[styles.menuInner, styles.menuParentPosition]}>
@@ -43,7 +43,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
             <Image
               style={[styles.vectorIcon, styles.vectorIconLayout]}
               resizeMode="cover"
-              source={require('../assets/vector1.png')}
+              source={require('../../assets/vector1.png')}
             />
             <Text
               style={[
@@ -76,7 +76,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
               <Image
                 style={styles.changLeMotDePasseChild}
                 resizeMode="cover"
-                source={require('../assets/group-239688.png')}
+                source={require('../../assets/group-239688.png')}
               />
               <Pressable style={[styles.arrow, styles.ml70]}>
                 <View
@@ -85,7 +85,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
                 <Image
                   style={styles.arrowItem}
                   resizeMode="cover"
-                  source={require('../assets/vector-59.png')}
+                  source={require('../../assets/vector-59.png')}
                 />
               </Pressable>
             </View>
@@ -110,7 +110,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
                 <Image
                   style={styles.vectorIcon1}
                   resizeMode="cover"
-                  source={require('../assets/vector2.png')}
+                  source={require('../../assets/vector2.png')}
                 />
               </View>
               <Text style={[styles.motDePasseTypo, styles.ml16]}>
@@ -124,7 +124,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
               <Image
                 style={styles.arrowItem}
                 resizeMode="cover"
-                source={require('../assets/vector-591.png')}
+                source={require('../../assets/vector-591.png')}
               />
             </Pressable>
           </Pressable>
@@ -144,7 +144,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
                 <Image
                   style={styles.vectorIcon2}
                   resizeMode="cover"
-                  source={require('../assets/vector3.png')}
+                  source={require('../../assets/vector3.png')}
                 />
               </View>
               <View
@@ -167,7 +167,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
               <Image
                 style={styles.arrowItem}
                 resizeMode="cover"
-                source={require('../assets/vector-592.png')}
+                source={require('../../assets/vector-592.png')}
               />
             </Pressable>
           </Pressable>
@@ -182,7 +182,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
               <Image
                 style={styles.groupLayout}
                 resizeMode="cover"
-                source={require('../assets/group-1026.png')}
+                source={require('../../assets/group-1026.png')}
               />
               <Text style={[styles.motDePasseTypo, styles.ml16]}>
                 A propos
@@ -195,14 +195,14 @@ const Burger = ({ state, navigation }: BurgerType) => {
               <Image
                 style={styles.arrowItem}
                 resizeMode="cover"
-                source={require('../assets/vector-591.png')}
+                source={require('../../assets/vector-591.png')}
               />
             </Pressable>
           </View>
           <Image
             style={[styles.lineIcon, styles.menuParentPosition]}
             resizeMode="cover"
-            source={require('../assets/line.png')}
+            source={require('../../assets/line.png')}
           />
         </View>
         <View
@@ -214,7 +214,7 @@ const Burger = ({ state, navigation }: BurgerType) => {
             <Image
               style={styles.imageIcon}
               resizeMode="cover"
-              source={require('../assets/image1.png')}
+              source={require('../../assets/image1.png')}
             />
             <Text
               style={[

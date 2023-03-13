@@ -10,142 +10,159 @@ import {
   Image,
   TextInput,
   Pressable,
+  KeyboardAvoidingView,
 } from 'react-native';
 import { Checkbox as RNPCheckbox } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
-
+import { navigationProps } from '../..';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { ROUTES } from '../../constants';
 type LoginType = {
   style?: StyleProp<ViewStyle>;
 };
 
 const Login = ({ style }: LoginType) => {
   const [checkchecked, setCheckchecked] = useState(undefined);
-  const navigation = useNavigation();
+  const navigation = useNavigation<navigationProps>();
 
   return (
-    <View style={[styles.login, style]}>
-      <View style={styles.body}>
-        <View style={[styles.slideLogin, styles.mt50]}>
-          <View style={styles.slide}>
-            <View style={styles.titre}>
-              <Text
-                style={[
-                  styles.bienvenueSurFast,
-                  styles.bienvenueSurFastTypo,
-                ]}
-              >
-                BIENVENUE SUR FAST CASH
-              </Text>
-              <Text
-                style={[styles.loremIpsumDolor, styles.mt8]}
-              >{`Lorem ipsum dolor sit amet consectetur.
+    <KeyboardAwareScrollView>
+      <View style={[styles.login, style]}>
+        <View style={styles.body}>
+          <Image
+            style={styles.logo2Icon}
+            resizeMode="cover"
+            source={require('../../assets/logo.png')}
+          />
+
+          <View style={[styles.slideLogin, styles.mt50]}>
+            <View style={styles.slide}>
+              <View style={styles.titre}>
+                <Text
+                  style={[
+                    styles.bienvenueSurFast,
+                    styles.bienvenueSurFastTypo,
+                  ]}
+                >
+                  BIENVENUE SUR FAST CASH
+                </Text>
+                <Text
+                  style={[styles.loremIpsumDolor, styles.mt8]}
+                >{`Lorem ipsum dolor sit amet consectetur.
 Lorem ipsum dolor sit amet consectetur.`}</Text>
+              </View>
+              <Image
+                style={[styles.slideButtonIcon, styles.mt25]}
+                resizeMode="cover"
+                source={require('../../assets/slide-button.png')}
+              />
             </View>
-            <Image
-              style={[styles.slideButtonIcon, styles.mt25]}
-              resizeMode="cover"
-              source={require('../assets/slide-button.png')}
-            />
-          </View>
-          <View style={[styles.cards, styles.mt45]}>
-            <View>
+            <View style={[styles.cards, styles.mt45]}>
               <View>
-                <Text style={styles.nomDutilisateur}>
-                  Nom d’utilisateur
-                </Text>
-                <TextInput
-                  style={[
-                    styles.emailFieldChild,
-                    styles.mt7,
-                    styles.buttonFlexBox,
-                    styles.fieldChildBorder,
-                  ]}
-                  placeholder="Votre nom d’utilisateur"
-                  keyboardType="email-address"
-                  autoCapitalize="none"
-                  placeholderTextColor="#abb3bb"
-                />
-              </View>
-              <View style={styles.mt16}>
-                <Text style={styles.nomDutilisateur}>
-                  Mot de passe
-                </Text>
-                <TextInput
-                  style={[
-                    styles.passwordFieldChild,
-                    styles.mt7,
-                    styles.fieldChildBorder,
-                  ]}
-                  placeholder="votre mot de passe"
-                  keyboardType="default"
-                  autoCapitalize="none"
-                  secureTextEntry
-                  placeholderTextColor="#abb3bb"
-                />
-              </View>
-              <View style={[styles.keepLoggedInParent, styles.mt16]}>
-                <View style={styles.keepLoggedIn}>
-                  <View>
-                    <RNPCheckbox
-                      status={checkchecked ? 'checked' : 'unchecked'}
-                      onPress={() => setCheckchecked(!checkchecked)}
-                      color="#d0d0d0"
-                    />
+                <View>
+                  <Text style={styles.nomDutilisateur}>
+                    Nom d’utilisateur
+                  </Text>
+                  <TextInput
+                    style={[
+                      styles.emailFieldChild,
+                      styles.mt7,
+                      styles.buttonFlexBox,
+                      styles.fieldChildBorder,
+                    ]}
+                    placeholder="Votre nom d’utilisateur"
+                    keyboardType="email-address"
+                    autoCapitalize="none"
+                    placeholderTextColor="#abb3bb"
+                  />
+                </View>
+                <View style={styles.mt16}>
+                  <Text style={styles.nomDutilisateur}>
+                    Mot de passe
+                  </Text>
+                  <TextInput
+                    style={[
+                      styles.passwordFieldChild,
+                      styles.mt7,
+                      styles.fieldChildBorder,
+                    ]}
+                    placeholder="votre mot de passe"
+                    keyboardType="default"
+                    autoCapitalize="none"
+                    secureTextEntry
+                    placeholderTextColor="#abb3bb"
+                  />
+                </View>
+                <View
+                  style={[styles.keepLoggedInParent, styles.mt16]}
+                >
+                  <View style={styles.keepLoggedIn}>
+                    <View>
+                      <RNPCheckbox
+                        status={
+                          checkchecked ? 'checked' : 'unchecked'
+                        }
+                        onPress={() => setCheckchecked(!checkchecked)}
+                        color="#d0d0d0"
+                      />
+                    </View>
+                    <Text
+                      style={[
+                        styles.gardezMoiConnect,
+                        styles.ml10,
+                        styles.forgotPasswordTypo,
+                      ]}
+                    >
+                      Gardez-moi connecté
+                    </Text>
                   </View>
                   <Text
                     style={[
-                      styles.gardezMoiConnect,
-                      styles.ml10,
+                      styles.forgotPassword,
                       styles.forgotPasswordTypo,
                     ]}
                   >
-                    Gardez-moi connecté
+                    Mot de passe oublié ?
                   </Text>
                 </View>
+              </View>
+              <Pressable
+                style={[
+                  styles.button,
+                  styles.mt20,
+                  styles.buttonFlexBox,
+                ]}
+                onPress={() => navigation.navigate(ROUTES.HOME)}
+              >
                 <Text
                   style={[
-                    styles.forgotPassword,
-                    styles.forgotPasswordTypo,
+                    styles.largeLabelMedium16px,
+                    styles.bienvenueSurFastTypo,
                   ]}
                 >
-                  Mot de passe oublié ?
-                </Text>
-              </View>
-            </View>
-            <Pressable
-              style={[
-                styles.button,
-                styles.mt20,
-                styles.buttonFlexBox,
-              ]}
-              onPress={() => {}}
-            >
-              <Text
-                style={[
-                  styles.largeLabelMedium16px,
-                  styles.bienvenueSurFastTypo,
-                ]}
-              >
-                Se connecter
-              </Text>
-            </Pressable>
-            <View style={[styles.inscrivezVous, styles.mt20]}>
-              <Text style={[styles.vousNavezPas, styles.vousTypo]}>
-                Vous n'avez pas de compte ?
-              </Text>
-              <Pressable onPress={() => {}}>
-                <Text
-                  style={[styles.inscrivezVous2, styles.vousTypo]}
-                >
-                  Inscrivez-vous
+                  Se connecter
                 </Text>
               </Pressable>
+              <View style={[styles.inscrivezVous, styles.mt20]}>
+                <Text style={[styles.vousNavezPas, styles.vousTypo]}>
+                  Vous n'avez pas de compte ?
+                </Text>
+                <Pressable
+                  onPress={() => navigation.navigate('SignUp')}
+                >
+                  <Text
+                    style={[styles.inscrivezVous2, styles.vousTypo]}
+                  >
+                    Inscrivez-vous
+                  </Text>
+                </Pressable>
+              </View>
             </View>
           </View>
         </View>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 };
 
@@ -182,6 +199,10 @@ const styles = StyleSheet.create({
   buttonFlexBox: {
     overflow: 'hidden',
     flexDirection: 'row',
+  },
+  logo2Icon: {
+    width: 130,
+    height: 166,
   },
   fieldChildBorder: {
     borderWidth: 0.7,
@@ -243,8 +264,8 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   emailFieldChild: {
-    paddingHorizontal: 20,
-    paddingVertical: 17,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
     flexDirection: 'row',
     width: 327,
   },
@@ -323,6 +344,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.ivory,
     height: 844,
     width: 416,
+    flex: 1,
   },
 });
 

@@ -24,10 +24,10 @@ const MesFormules = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require('../assets/symbols.png')}
+          source={require('../../assets/symbols.png')}
         />
       </View>
-      <Section7 icon={require('../assets/icon2.png')} />
+      <Section7 icon={require('../../assets/icon2.png')} />
       <SectionForm labelOpacity={0.2} />
       <View style={styles.modalPopParent}>
         <View style={styles.modalPosition}>
@@ -41,7 +41,7 @@ const MesFormules = () => {
             <Image
               style={[styles.icon, styles.iconLayout]}
               resizeMode="cover"
-              source={require('../assets/materialsymbolscloserounded2.png')}
+              source={require('../../assets/materialsymbolscloserounded2.png')}
             />
           </Pressable>
         </View>
@@ -57,14 +57,14 @@ const MesFormules = () => {
           <Image
             style={[styles.icon1, styles.mt30]}
             resizeMode="cover"
-            source={require('../assets/icon5.png')}
+            source={require('../../assets/icon5.png')}
           />
         </View>
       </View>
       <Group239702Container
-        productIds={require('../assets/home2.png')}
-        productIds24x24={require('../assets/vector.png')}
-        productIds24x24x={require('../assets/profile.png')}
+        productIds={require('../../assets/home2.png')}
+        productIds24x24={require('../../assets/vector.png')}
+        productIds24x24x={require('../../assets/profile.png')}
         propTop={747}
         propColor="rgba(255, 255, 255, 0.7)"
         propColor1="#f25650"

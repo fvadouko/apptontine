@@ -11,7 +11,7 @@ const PROFILE = () => {
 
   return (
     <View style={styles.profile}>
-      <Section7 icon={require('../assets/icon1.png')} />
+      <Section7 icon={require('../../assets/icon1.png')} />
       <StatusContainer />
       <View style={[styles.statusBar, styles.statusBarFlexBox]}>
         <View style={styles.barsstatusTime}>
@@ -20,7 +20,7 @@ const PROFILE = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require('../assets/symbols1.png')}
+          source={require('../../assets/symbols1.png')}
         />
       </View>
       <View style={[styles.textParent, styles.statusBarFlexBox]}>

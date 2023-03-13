@@ -8,7 +8,7 @@ import { Margin, Color, FontFamily } from '../../GlobalStyles';
 const MesFormules1 = () => {
   return (
     <View style={styles.mesFormules}>
-      <Section7 icon={require('../assets/icon2.png')} />
+      <Section7 icon={require('../../assets/icon2.png')} />
       <View style={styles.frameParent}>
         <View style={styles.mesFormulesWrapper}>
           <Text style={[styles.mesFormules1, styles.timeFlexBox]}>
@@ -24,7 +24,7 @@ const MesFormules1 = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require('../assets/symbols.png')}
+          source={require('../../assets/symbols.png')}
         />
       </View>
       <DefaultContainer1 />

@@ -32,10 +32,10 @@ const VerroueApp = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require('../assets/symbols.png')}
+          source={require('../../assets/symbols.png')}
         />
       </View>
-      <Section7 icon={require('../assets/icon.png')} />
+      <Section7 icon={require('../../assets/icon.png')} />
       <DashboardSection propDisplay="none" />
       <View style={[styles.parent, styles.parentFlexBox]}>
         <Text style={[styles.text, styles.timeFlexBox]}>3</Text>
@@ -79,13 +79,13 @@ const VerroueApp = () => {
           <Image
             style={styles.icsharpCloseIcon}
             resizeMode="cover"
-            source={require('../assets/icsharpclose.png')}
+            source={require('../../assets/icsharpclose.png')}
           />
         </View>
         <LogoutContainer />
         <View style={[styles.menuChild, styles.childBg]} />
         <AboutContainer
-          productId={require('../assets/group-1026.png')}
+          productId={require('../../assets/group-1026.png')}
         />
         <SergeKassiContainer />
       </View>

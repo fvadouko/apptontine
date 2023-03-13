@@ -11,7 +11,7 @@ const PROFILEmodifier = () => {
 
   return (
     <View style={styles.profilemodifier}>
-      <Section7 icon={require('../assets/icon1.png')} />
+      <Section7 icon={require('../../assets/icon1.png')} />
       <View style={[styles.text, styles.textPosition]}>
         <Text style={[styles.headline, styles.timeTypo]}>
           Profile
@@ -25,7 +25,7 @@ const PROFILEmodifier = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require('../assets/symbols1.png')}
+          source={require('../../assets/symbols1.png')}
         />
       </View>
       <GroupContainer

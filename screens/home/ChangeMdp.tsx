@@ -33,21 +33,21 @@ const ChangeMdp = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml251]}
           resizeMode="cover"
-          source={require('../assets/symbols.png')}
+          source={require('../../assets/symbols.png')}
         />
       </View>
       <View style={[styles.groupParent, styles.statusBarPosition]}>
         <Image
           style={styles.groupIcon}
           resizeMode="cover"
-          source={require('../assets/group.png')}
+          source={require('../../assets/group.png')}
         />
         <View style={[styles.groupContainer, styles.ml257]}>
           <View style={styles.iconParent}>
             <Image
               style={styles.icon}
               resizeMode="cover"
-              source={require('../assets/icon.png')}
+              source={require('../../assets/icon.png')}
             />
             <View
               style={[
@@ -67,7 +67,7 @@ const ChangeMdp = () => {
           <Image
             style={[styles.imageIcon, styles.ml12]}
             resizeMode="cover"
-            source={require('../assets/image.png')}
+            source={require('../../assets/image.png')}
           />
         </View>
       </View>
@@ -104,7 +104,7 @@ const ChangeMdp = () => {
               styles.icsharpCloseIconLayout,
             ]}
             resizeMode="cover"
-            source={require('../assets/icsharpclose.png')}
+            source={require('../../assets/icsharpclose.png')}
           />
         </View>
         <LogoutContainer />
@@ -138,7 +138,7 @@ const ChangeMdp = () => {
                 <Image
                   style={[styles.groupItem, styles.groupItemPosition]}
                   resizeMode="cover"
-                  source={require('../assets/group-460.png')}
+                  source={require('../../assets/group-460.png')}
                 />
                 <Text style={[styles.changLeMot, styles.motTypo]}>
                   Changé le mot de passe
@@ -154,7 +154,7 @@ const ChangeMdp = () => {
                     styles.arrowItemPosition,
                   ]}
                   resizeMode="cover"
-                  source={require('../assets/vector-59.png')}
+                  source={require('../../assets/vector-59.png')}
                 />
               </View>
             </View>
@@ -172,7 +172,7 @@ const ChangeMdp = () => {
                 <Image
                   style={styles.vectorIcon}
                   resizeMode="cover"
-                  source={require('../assets/vector2.png')}
+                  source={require('../../assets/vector2.png')}
                 />
               </View>
               <Text style={[styles.motTypo, styles.ml16]}>
@@ -186,7 +186,7 @@ const ChangeMdp = () => {
               <Image
                 style={styles.arrowItemPosition}
                 resizeMode="cover"
-                source={require('../assets/vector-591.png')}
+                source={require('../../assets/vector-591.png')}
               />
             </View>
           </View>
@@ -202,7 +202,7 @@ const ChangeMdp = () => {
                 <Image
                   style={styles.vectorIcon1}
                   resizeMode="cover"
-                  source={require('../assets/vector3.png')}
+                  source={require('../../assets/vector3.png')}
                 />
               </View>
               <View
@@ -223,7 +223,7 @@ const ChangeMdp = () => {
               <Image
                 style={styles.arrowItemPosition}
                 resizeMode="cover"
-                source={require('../assets/vector-592.png')}
+                source={require('../../assets/vector-592.png')}
               />
             </View>
           </View>
@@ -232,7 +232,7 @@ const ChangeMdp = () => {
               <Image
                 style={styles.groupInnerLayout}
                 resizeMode="cover"
-                source={require('../assets/group-1026.png')}
+                source={require('../../assets/group-1026.png')}
               />
               <Text style={[styles.motTypo, styles.ml16]}>
                 A propos
@@ -245,7 +245,7 @@ const ChangeMdp = () => {
               <Image
                 style={styles.arrowItemPosition}
                 resizeMode="cover"
-                source={require('../assets/vector-591.png')}
+                source={require('../../assets/vector-591.png')}
               />
             </View>
           </View>
@@ -256,7 +256,7 @@ const ChangeMdp = () => {
               styles.lineIconLayout,
             ]}
             resizeMode="cover"
-            source={require('../assets/line.png')}
+            source={require('../../assets/line.png')}
           />
         </View>
         <SergeKassiContainer />

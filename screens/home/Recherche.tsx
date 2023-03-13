@@ -15,7 +15,7 @@ const Recherche = () => {
 
   return (
     <View style={styles.recherche}>
-      <Section7 icon={require('../assets/icon1.png')} />
+      <Section7 icon={require('../../assets/icon1.png')} />
       <View style={styles.frameParent}>
         <View style={styles.rechercheWrapper}>
           <Text style={[styles.recherche1, styles.timeFlexBox]}>
@@ -47,13 +47,13 @@ const Recherche = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require('../assets/symbols2.png')}
+          source={require('../../assets/symbols2.png')}
         />
       </View>
       <Group239702Container
-        productIds={require('../assets/home1.png')}
-        productIds24x24={require('../assets/vector5.png')}
-        productIds24x24x={require('../assets/profile3.png')}
+        productIds={require('../../assets/home1.png')}
+        productIds24x24={require('../../assets/vector5.png')}
+        productIds24x24x={require('../../assets/profile3.png')}
         propTop={747}
         propColor="rgba(255, 255, 255, 0.7)"
         propColor1="rgba(255, 255, 255, 0.7)"

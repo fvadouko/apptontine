@@ -1,8 +1,8 @@
-import * as React from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
-import NameContainer from "./NameContainer";
-import CountryContainer from "./CountryContainer";
-import { Margin, FontFamily, Color } from "../GlobalStyles";
+import * as React from 'react';
+import { View, Text, StyleSheet, TextInput } from 'react-native';
+import NameContainer from './NameContainer';
+import CountryContainer from './CountryContainer';
+import { Margin, FontFamily, Color } from '../GlobalStyles';
 
 const PasswordView = () => {
   return (
@@ -11,7 +11,7 @@ const PasswordView = () => {
         <Text style={styles.nom}>Nom</Text>
         <TextInput
           style={[styles.emailFieldChild, styles.mt7]}
-          placeholder="Votre no"
+          placeholder="Votre nom"
           keyboardType="default"
           placeholderTextColor="#abb3bb"
         />
@@ -28,7 +28,7 @@ const PasswordView = () => {
       <NameContainer
         lastName="Pseudo"
         firstName="Votre pseudo"
-        propMarginTop={8}
+        propMarginTop={10}
       />
       <NameContainer
         lastName="Email"
@@ -77,18 +77,18 @@ const styles = StyleSheet.create({
     lineHeight: 14,
     fontFamily: FontFamily.interRegular,
     color: Color.black,
-    textAlign: "left",
+    textAlign: 'left',
   },
   emailFieldChild: {
     borderRadius: 8,
-    borderStyle: "solid",
-    borderColor: "#d0d0d0",
+    borderStyle: 'solid',
+    borderColor: '#d0d0d0',
     borderWidth: 0.7,
     width: 327,
-    overflow: "hidden",
-    flexDirection: "row",
+    overflow: 'hidden',
+    flexDirection: 'row',
     paddingHorizontal: 20,
-    paddingVertical: 17,
+    paddingVertical: 10,
   },
 });
 

@@ -8,76 +8,88 @@ import {
 } from 'react-native';
 import PasswordView from '../../components/PasswordView';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 const SignUp = () => {
   return (
-    <View style={styles.signUp}>
-      <View style={styles.homeIndicator}>
-        <View style={styles.homeIndicator1} />
-      </View>
-      <View style={styles.body}>
-        <View style={styles.slideLogin} />
-        <View style={[styles.cards, styles.cardsFlexBox]}>
-          <View style={styles.buttonFlexBox}>
-            <Image
-              style={styles.photoIcon}
-              resizeMode="cover"
-              source={require('../assets/photo1.png')}
-            />
-            <Text
+    <KeyboardAwareScrollView>
+      <View style={styles.signUp}>
+        <View style={styles.homeIndicator}>
+          <View style={styles.homeIndicator1} />
+        </View>
+        <View style={styles.body}>
+          <View style={styles.slideLogin} />
+          <View style={[styles.cards, styles.cardsFlexBox]}>
+            <View style={styles.buttonFlexBox}>
+              <Image
+                style={styles.photoIcon}
+                resizeMode="cover"
+                source={require('../../assets/photo1.png')}
+              />
+              <Text
+                style={[
+                  styles.largeLabelMedium16px,
+                  styles.ml30,
+                  styles.largeTypo,
+                ]}
+              >
+                Ajouter une photo
+              </Text>
+            </View>
+            <PasswordView />
+            <View
+              style={[styles.vousAvezUnCompteParent, styles.mt20]}
+            >
+              <Text style={[styles.vousAvezUn, styles.vousTypo]}>
+                Vous avez un compte ?
+              </Text>
+              <Text style={[styles.connectezVous, styles.vousTypo]}>
+                Connectez-vous
+              </Text>
+            </View>
+            <View
               style={[
-                styles.largeLabelMedium16px,
-                styles.ml30,
-                styles.largeTypo,
+                styles.button,
+                styles.mt20,
+                styles.buttonFlexBox,
               ]}
             >
-              Ajouter une photo
-            </Text>
+              <Text
+                style={[
+                  styles.largeLabelMedium16px1,
+                  styles.largeTypo,
+                ]}
+              >
+                Emregistrer
+              </Text>
+            </View>
           </View>
-          <PasswordView />
-          <View style={[styles.vousAvezUnCompteParent, styles.mt20]}>
-            <Text style={[styles.vousAvezUn, styles.vousTypo]}>
-              Vous avez un compte ?
-            </Text>
-            <Text style={[styles.connectezVous, styles.vousTypo]}>
-              Connectez-vous
-            </Text>
-          </View>
-          <View
-            style={[styles.button, styles.mt20, styles.buttonFlexBox]}
-          >
+          <View style={[styles.inscription, styles.cardsFlexBox]}>
             <Text
-              style={[styles.largeLabelMedium16px1, styles.largeTypo]}
+              style={[styles.largeLabelMedium16px2, styles.largeTypo]}
             >
-              Emregistrer
+              Inscription
             </Text>
+            <View style={[styles.inscriptionChild, styles.mt10]} />
           </View>
+          <ImageBackground
+            style={styles.logo2Icon}
+            resizeMode="cover"
+            source={require('../../assets/logo.png')}
+          />
         </View>
-        <View style={[styles.inscription, styles.cardsFlexBox]}>
-          <Text
-            style={[styles.largeLabelMedium16px2, styles.largeTypo]}
-          >
-            Inscription
-          </Text>
-          <View style={[styles.inscriptionChild, styles.mt10]} />
+        <View style={[styles.statusBar, styles.cardsFlexBox]}>
+          <View style={styles.barsstatusTime}>
+            <Text style={[styles.time, styles.largeTypo]}>19:27</Text>
+          </View>
+          <Image
+            style={[styles.symbolsIcon, styles.ml240]}
+            resizeMode="cover"
+            source={require('../../assets/symbols3.png')}
+          />
         </View>
-        <ImageBackground
-          style={styles.logo2Icon}
-          resizeMode="cover"
-          source={require('../assets/logo21.png')}
-        />
       </View>
-      <View style={[styles.statusBar, styles.cardsFlexBox]}>
-        <View style={styles.barsstatusTime}>
-          <Text style={[styles.time, styles.largeTypo]}>19:27</Text>
-        </View>
-        <Image
-          style={[styles.symbolsIcon, styles.ml240]}
-          resizeMode="cover"
-          source={require('../assets/symbols3.png')}
-        />
-      </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 };
 

@@ -22,9 +22,9 @@ const Dashboard = () => {
         <Text style={[styles.text, styles.textTypo]}>Scr/jour</Text>
       </View>
       <Group239702Container
-        productIds={require('../assets/home.png')}
-        productIds24x24={require('../assets/vector.png')}
-        productIds24x24x={require('../assets/profile4.png')}
+        productIds={require('../../assets/home.png')}
+        productIds24x24={require('../../assets/vector.png')}
+        productIds24x24x={require('../../assets/profile4.png')}
         propTop={747}
         propColor="#f25650"
         propColor1="rgba(255, 255, 255, 0.7)"
@@ -63,7 +63,7 @@ const Dashboard = () => {
           <Image
             style={styles.icon}
             resizeMode="cover"
-            source={require('../assets/group.png')}
+            source={require('../../assets/group.png')}
           />
         </Pressable>
         <View
@@ -77,7 +77,7 @@ const Dashboard = () => {
             <Image
               style={styles.icon1}
               resizeMode="cover"
-              source={require('../assets/icon6.png')}
+              source={require('../../assets/icon6.png')}
             />
             <View style={styles.rectangleParent}>
               <View style={styles.instanceChild} />
@@ -87,7 +87,7 @@ const Dashboard = () => {
           <Image
             style={[styles.imageIcon, styles.ml12]}
             resizeMode="cover"
-            source={require('../assets/image3.png')}
+            source={require('../../assets/image3.png')}
           />
         </View>
       </View>
