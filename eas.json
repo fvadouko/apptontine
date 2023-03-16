@@ -1,0 +1,18 @@
+{
+  "build": {
+    "production": {
+      "channel": "production",
+      "env": {
+        "API_URL": "https://fast-cash-backend.herokuapp.com",
+        "GRAPHQL_ENDPOINT": "https://fast-cash-backend.herokuapp.com/graphql"
+      }
+    },
+    "preview": {
+      "channel": "staging",
+      "env": {
+        "API_URL": "https://fast-cash-backend.herokuapp.com",
+        "GRAPHQL_ENDPOINT": "https://fast-cash-backend.herokuapp.com/graphql"
+      }
+    }
+  }
+}

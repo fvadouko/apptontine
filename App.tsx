@@ -59,10 +59,16 @@ const App = () => {
   }
 
   return (
-    <NavigationContainer>
-      {/* {isAuthenticated ? AuthNavigator : DrawerNavigator } */}
-      <AuthNavigator />
-    </NavigationContainer>
+    <>
+      {!hideSplashScreen ? (
+        <Acceuil2 />
+      ) : (
+        <NavigationContainer>
+          {/* {isAuthenticated ? AuthNavigator : DrawerNavigator } */}
+          <AuthNavigator />
+        </NavigationContainer>
+      )}
+    </>
   );
 };
 export default App;

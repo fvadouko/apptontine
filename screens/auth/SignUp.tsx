@@ -1,16 +1,94 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import {
   StyleSheet,
   View,
   Image,
   Text,
   ImageBackground,
+  Pressable,
 } from 'react-native';
 import PasswordView from '../../components/PasswordView';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import * as ImagePicker from 'expo-image-picker';
+import Constants from 'expo-constants';
+
+type AssetsType = {
+  public_id: string;
+  url: string;
+};
 
 const SignUp = () => {
+  const [image, setImage] = useState<string>('');
+  const [asset, setAsset] = useState<AssetsType>({
+    public_id: '',
+    url: '',
+  });
+
+  const pickImage = async () => {
+    const apiUrl =
+      Constants &&
+      Constants.expoConfig &&
+      Constants.expoConfig.extra &&
+      Constants.expoConfig.extra.apiUrl;
+    // const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
+
+    // if (permissionResult.granted === false) {
+    //   alert("You've refused to allow this appp to access your camera!");
+    //   return;
+    // }
+    // No permissions request is necessary for launching the image library
+    try {
+      let deleteImage = false;
+      if (asset.public_id !== '') {
+        deleteImage = true;
+        const response = await fetch(`${apiUrl}/removeimage`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            public_id: asset.public_id,
+          }),
+        });
+        const res = await response.json();
+        console.log('res', res);
+        if (res.success) {
+          console.log('image deleted');
+          deleteImage = false;
+        }
+      }
+      if (deleteImage) {
+        alert('Essayez de nouveau');
+        return;
+      }
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.Images,
+        allowsEditing: true,
+        aspect: [4, 3],
+        base64: true,
+      });
+
+      if (!result.canceled) {
+        console.log('{process.env.REACT_APP_API_URL', apiUrl);
+        const response = await fetch(`${apiUrl}/uploadimages`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            image: `data:image/jpeg;base64,${result.assets[0].base64}`,
+          }),
+        });
+        const asset = await response.json();
+        setAsset(asset);
+        setImage(`data:image/jpeg;base64,${result.assets[0].base64}`);
+      }
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
   return (
     <KeyboardAwareScrollView>
       <View style={styles.signUp}>
@@ -21,11 +99,19 @@ const SignUp = () => {
           <View style={styles.slideLogin} />
           <View style={[styles.cards, styles.cardsFlexBox]}>
             <View style={styles.buttonFlexBox}>
-              <Image
-                style={styles.photoIcon}
-                resizeMode="cover"
-                source={require('../../assets/photo1.png')}
-              />
+              <Pressable onPress={pickImage}>
+                <Image
+                  style={styles.photoIcon}
+                  resizeMode="cover"
+                  source={
+                    image === ''
+                      ? require('../../assets/photo1.png')
+                      : {
+                          uri: image,
+                        }
+                  }
+                />
+              </Pressable>
               <Text
                 style={[
                   styles.largeLabelMedium16px,
@@ -129,6 +215,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     alignItems: 'center',
+    marginBottom: 20,
   },
   homeIndicator1: {
     marginLeft: -67,
@@ -157,8 +244,8 @@ const styles = StyleSheet.create({
   },
   photoIcon: {
     borderRadius: 10,
-    maxWidth: '100%',
-    maxHeight: '100%',
+    width: 100,
+    height: 100,
     overflow: 'hidden',
   },
   largeLabelMedium16px: {

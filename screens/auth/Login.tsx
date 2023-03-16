@@ -4,13 +4,11 @@ import {
   StyleProp,
   ViewStyle,
   View,
-  ImageBackground,
   StyleSheet,
   Text,
   Image,
   TextInput,
   Pressable,
-  KeyboardAvoidingView,
 } from 'react-native';
 import { Checkbox as RNPCheckbox } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
@@ -18,17 +16,14 @@ import { Margin, FontFamily, Color } from '../../GlobalStyles';
 import { navigationProps } from '../..';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { ROUTES } from '../../constants';
-type LoginType = {
-  style?: StyleProp<ViewStyle>;
-};
 
-const Login = ({ style }: LoginType) => {
-  const [checkchecked, setCheckchecked] = useState(undefined);
+const Login = () => {
+  const [checkchecked, setCheckchecked] = useState(false);
   const navigation = useNavigation<navigationProps>();
 
   return (
     <KeyboardAwareScrollView>
-      <View style={[styles.login, style]}>
+      <View style={styles.login}>
         <View style={styles.body}>
           <Image
             style={styles.logo2Icon}
@@ -117,14 +112,20 @@ Lorem ipsum dolor sit amet consectetur.`}</Text>
                       Gardez-moi connecté
                     </Text>
                   </View>
-                  <Text
-                    style={[
-                      styles.forgotPassword,
-                      styles.forgotPasswordTypo,
-                    ]}
+                  <Pressable
+                    onPress={() =>
+                      navigation.navigate(ROUTES.FORGOT_PASSWORD)
+                    }
                   >
-                    Mot de passe oublié ?
-                  </Text>
+                    <Text
+                      style={[
+                        styles.forgotPassword,
+                        styles.forgotPasswordTypo,
+                      ]}
+                    >
+                      Mot de passe oublié ?
+                    </Text>
+                  </Pressable>
                 </View>
               </View>
               <Pressable
@@ -149,7 +150,7 @@ Lorem ipsum dolor sit amet consectetur.`}</Text>
                   Vous n'avez pas de compte ?
                 </Text>
                 <Pressable
-                  onPress={() => navigation.navigate('SignUp')}
+                  onPress={() => navigation.navigate(ROUTES.SIGNUP)}
                 >
                   <Text
                     style={[styles.inscrivezVous2, styles.vousTypo]}
