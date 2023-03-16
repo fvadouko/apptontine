@@ -11,9 +11,10 @@ import Group239702Container from '../../components/Group239702Container';
 import SouscriptionContainer from '../../components/SouscriptionContainer';
 import DashboardView from '../../components/DashboardView';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
+import { navigationProps } from '../..';
 
 const Dashboard = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<navigationProps>();
 
   return (
     <View style={styles.dashboard}>
@@ -59,7 +60,10 @@ const Dashboard = () => {
       </View>
       <DashboardView />
       <View style={[styles.bar, styles.barFlexBox]}>
-        <Pressable style={styles.group} onPress={() => {}}>
+        <Pressable
+          style={styles.group}
+          onPress={() => navigation.openDrawer()}
+        >
           <Image
             style={styles.icon}
             resizeMode="cover"
