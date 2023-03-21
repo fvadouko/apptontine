@@ -12,10 +12,9 @@ import SouscriptionContainer from '../../components/SouscriptionContainer';
 import DashboardView from '../../components/DashboardView';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
 import { navigationProps } from '../..';
+import HeaderContainer from '../../components/HeaderContainer';
 
 const Dashboard = () => {
-  const navigation = useNavigation<navigationProps>();
-
   return (
     <View style={styles.dashboard}>
       <View style={styles.parent}>
@@ -59,42 +58,7 @@ const Dashboard = () => {
         </Text>
       </View>
       <DashboardView />
-      <View style={[styles.bar, styles.barFlexBox]}>
-        <Pressable
-          style={styles.group}
-          onPress={() => navigation.openDrawer()}
-        >
-          <Image
-            style={styles.icon}
-            resizeMode="cover"
-            source={require('../../assets/group.png')}
-          />
-        </Pressable>
-        <View
-          style={[
-            styles.frameParent,
-            styles.ml257,
-            styles.barFlexBox,
-          ]}
-        >
-          <Pressable style={styles.iconParent}>
-            <Image
-              style={styles.icon1}
-              resizeMode="cover"
-              source={require('../../assets/icon6.png')}
-            />
-            <View style={styles.rectangleParent}>
-              <View style={styles.instanceChild} />
-              <Text style={[styles.text1, styles.textTypo]}>7</Text>
-            </View>
-          </Pressable>
-          <Image
-            style={[styles.imageIcon, styles.ml12]}
-            resizeMode="cover"
-            source={require('../../assets/image3.png')}
-          />
-        </View>
-      </View>
+      <HeaderContainer />
     </View>
   );
 };
@@ -106,9 +70,7 @@ const styles = StyleSheet.create({
   ml12: {
     marginLeft: Margin.m_xs,
   },
-  ml257: {
-    marginLeft: Margin.m_238xl,
-  },
+
   textTypo: {
     textAlign: 'left',
     fontFamily: FontFamily.interMedium,
@@ -119,10 +81,7 @@ const styles = StyleSheet.create({
     width: 306,
     textAlign: 'left',
   },
-  barFlexBox: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
+
   text: {
     fontSize: 16,
     lineHeight: 18,
@@ -150,67 +109,7 @@ const styles = StyleSheet.create({
     left: 16,
     position: 'absolute',
   },
-  icon: {
-    height: '100%',
-    width: '100%',
-  },
-  group: {
-    width: 23,
-    height: 18,
-  },
-  icon1: {
-    top: 10,
-    left: -1,
-    height: 24,
-    width: 21,
-    position: 'absolute',
-  },
-  instanceChild: {
-    height: '78.95%',
-    top: '21.05%',
-    right: '0%',
-    bottom: '0%',
-    left: '0%',
-    borderRadius: 12,
-    backgroundColor: Color.red_100,
-    position: 'absolute',
-    width: '100%',
-  },
-  text1: {
-    height: '84.21%',
-    width: '40%',
-    top: '0%',
-    left: '33.33%',
-    fontSize: 10,
-    lineHeight: 22,
-    color: Color.white,
-    position: 'absolute',
-  },
-  rectangleParent: {
-    top: 0,
-    left: 6,
-    width: 15,
-    height: 19,
-    position: 'absolute',
-  },
-  iconParent: {
-    height: 33,
-    width: 21,
-  },
-  imageIcon: {
-    width: 48,
-    height: 48,
-  },
-  frameParent: {
-    justifyContent: 'center',
-  },
-  bar: {
-    top: 42,
-    width: 354,
-    left: 16,
-    flexDirection: 'row',
-    position: 'absolute',
-  },
+
   dashboard: {
     backgroundColor: Color.ivory,
     flex: 1,
