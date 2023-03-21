@@ -1,8 +1,14 @@
-import * as React from "react";
-import { StyleSheet, View, ImageBackground, Text, Image } from "react-native";
-import { Margin, Color, FontFamily } from "../GlobalStyles";
+import * as React from 'react';
+import {
+  StyleSheet,
+  View,
+  ImageBackground,
+  Text,
+  Image,
+} from 'react-native';
+import { Margin, Color, FontFamily } from '../GlobalStyles';
 
-const Acceuil2 = () => {
+const SplashScreen = () => {
   return (
     <View style={styles.acceuil2}>
       <View style={[styles.homeIndicator, styles.statusBarPosition]}>
@@ -11,7 +17,7 @@ const Acceuil2 = () => {
       <ImageBackground
         style={styles.logo1Icon}
         resizeMode="cover"
-        source={require("../assets/logo2.png")}
+        source={require('../assets/logo2.png')}
       />
       <View style={[styles.statusBar, styles.statusBarPosition]}>
         <View style={styles.barsstatusTime}>
@@ -20,7 +26,7 @@ const Acceuil2 = () => {
         <Image
           style={[styles.symbolsIcon, styles.ml240]}
           resizeMode="cover"
-          source={require("../assets/symbols.png")}
+          source={require('../assets/symbols.png')}
         />
       </View>
     </View>
@@ -32,65 +38,65 @@ const styles = StyleSheet.create({
     marginLeft: Margin.m_221xl,
   },
   statusBarPosition: {
-    display: "none",
-    position: "absolute",
+    display: 'none',
+    position: 'absolute',
   },
   homeIndicator1: {
     marginLeft: -67,
     bottom: 8,
-    left: "50%",
+    left: '50%',
     borderRadius: 100,
     backgroundColor: Color.black,
     width: 134,
     height: 5,
-    position: "absolute",
+    position: 'absolute',
   },
   homeIndicator: {
     bottom: 0,
     left: 0,
     width: 390,
     height: 31,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   logo1Icon: {
     top: 339,
     left: 130,
     width: 130,
     height: 166,
-    position: "absolute",
+    position: 'absolute',
   },
   time: {
     fontSize: 15,
     letterSpacing: 0,
-    fontWeight: "700",
+    fontWeight: '700',
     fontFamily: FontFamily.interBold,
     color: Color.black,
-    textAlign: "left",
+    textAlign: 'left',
   },
   barsstatusTime: {
     paddingHorizontal: 0,
     paddingVertical: 2,
-    flexDirection: "row",
+    flexDirection: 'row',
   },
   symbolsIcon: {
     width: 68,
     height: 13,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
   statusBar: {
     top: 7,
     right: 21,
     left: 22,
-    alignItems: "center",
-    flexDirection: "row",
+    alignItems: 'center',
+    flexDirection: 'row',
   },
   acceuil2: {
     backgroundColor: Color.ivory,
     flex: 1,
-    width: "100%",
+    width: '100%',
     height: 844,
-    overflow: "hidden",
+    overflow: 'hidden',
   },
 });
 
-export default Acceuil2;
+export default SplashScreen;

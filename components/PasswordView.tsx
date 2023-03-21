@@ -1,46 +1,68 @@
 import * as React from 'react';
-import { View, Text, StyleSheet, TextInput } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TextInput,
+  Pressable,
+} from 'react-native';
 import NameContainer from './NameContainer';
 import CountryContainer from './CountryContainer';
 import { Margin, FontFamily, Color } from '../GlobalStyles';
 
+import { SAMPLE_FORM } from '../constants';
+import { useForm } from '../hooks/forms';
+
 const PasswordView = () => {
+  const {
+    form: { fields },
+    handleFieldUpdate,
+    handleSubmit,
+  } = useForm(SAMPLE_FORM);
+
   return (
     <View>
-      <View>
-        <Text style={styles.nom}>Nom</Text>
-        <TextInput
-          style={[styles.emailFieldChild, styles.mt7]}
-          placeholder="Votre nom"
-          keyboardType="default"
-          placeholderTextColor="#abb3bb"
-        />
-      </View>
-      <View style={styles.mt8}>
-        <Text style={styles.nom}>Prénom(s)</Text>
-        <TextInput
-          style={[styles.emailFieldChild, styles.mt7]}
-          placeholder="Vos Prénom(s)"
-          keyboardType="default"
-          placeholderTextColor="#abb3bb"
-        />
-      </View>
       <NameContainer
-        lastName="Pseudo"
-        firstName="Votre pseudo"
-        propMarginTop={10}
-      />
-      <NameContainer
-        lastName="Email"
-        firstName="Votre email"
+        labelField="Nom"
+        placeholder="Votre nom"
         propMarginTop={8}
+        onChangeValue={handleFieldUpdate}
+        valueField={fields.lastname.value}
+        nameField={fields.lastname.name}
       />
       <NameContainer
-        lastName="Numero"
-        firstName="Votre numero"
+        labelField="Prénom(s)"
+        placeholder="Votre prénom(s)"
         propMarginTop={8}
+        onChangeValue={handleFieldUpdate}
+        valueField={fields.firstname.value}
+        nameField={fields.firstname.name}
       />
-      <CountryContainer
+      <NameContainer
+        labelField="Pseudo"
+        placeholder="Votre pseudo"
+        propMarginTop={8}
+        onChangeValue={handleFieldUpdate}
+        valueField={fields.nickname.value}
+        nameField={fields.nickname.name}
+      />
+      <NameContainer
+        labelField="Email"
+        placeholder="Votre email"
+        propMarginTop={8}
+        onChangeValue={handleFieldUpdate}
+        valueField={fields.email.value}
+        nameField={fields.email.name}
+      />
+      <NameContainer
+        labelField="Numero de telephone"
+        placeholder="Votre numéro"
+        propMarginTop={8}
+        onChangeValue={handleFieldUpdate}
+        valueField={fields.tel.value}
+        nameField={fields.tel.name}
+      />
+      {/* <CountryContainer
         country="Pays"
         countryInput="Votre pays"
         propMarginLeft={200}
@@ -49,17 +71,34 @@ const PasswordView = () => {
         country="Ville"
         countryInput="Votre ville"
         propMarginLeft={204}
+      /> */}
+      <NameContainer
+        labelField="Mot de passe"
+        placeholder="Votre mot de passe"
+        propMarginTop={8}
+        onChangeValue={handleFieldUpdate}
+        valueField={fields.password.value}
+        nameField={fields.password.name}
       />
       <NameContainer
-        lastName="Mot de passe"
-        firstName="Votre mot de passe "
+        labelField="Confirmer"
+        placeholder="Confirmer le mot de passe"
         propMarginTop={8}
+        onChangeValue={handleFieldUpdate}
+        valueField={fields.confirmpassword.value}
+        nameField={fields.confirmpassword.name}
       />
-      <NameContainer
-        lastName="Confirmation mot de passe"
-        firstName="Votre mot de passe "
-        propMarginTop={8}
-      />
+      <Pressable onPress={handleSubmit}>
+        <View
+          style={[styles.button, styles.mt20, styles.buttonFlexBox]}
+        >
+          <Text
+            style={[styles.largeLabelMedium16px1, styles.largeTypo]}
+          >
+            Emregistrer
+          </Text>
+        </View>
+      </Pressable>
     </View>
   );
 };
@@ -89,6 +128,32 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 20,
     paddingVertical: 10,
+  },
+  largeLabelMedium16px1: {
+    fontSize: 16,
+    color: Color.maroon,
+  },
+  button: {
+    borderRadius: 12,
+    backgroundColor: Color.goldenrod,
+    width: 324,
+    paddingHorizontal: 32,
+    paddingVertical: 12,
+    overflow: 'hidden',
+  },
+  buttonFlexBox: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 20,
+  },
+  mt20: {
+    marginTop: Margin.m_xl,
+  },
+  largeTypo: {
+    textAlign: 'left',
+    fontFamily: FontFamily.interBold,
+    fontWeight: '700',
   },
 });
 

@@ -4,9 +4,11 @@ import { View, Text, StyleSheet, TextInput } from 'react-native';
 import { Margin, FontFamily, Color } from '../GlobalStyles';
 
 type NameContainerType = {
-  lastName?: string;
-  firstName?: string;
-
+  labelField: string;
+  placeholder?: string;
+  onChangeValue: (nameField: string, value: string) => void;
+  valueField: string;
+  nameField: string;
   /** Style props */
   propMarginTop?: number | string;
 };
@@ -20,9 +22,12 @@ const getStyleValue = (
 };
 
 const NameContainer = ({
-  lastName,
-  firstName,
+  placeholder,
+  labelField,
   propMarginTop,
+  onChangeValue,
+  valueField,
+  nameField,
 }: NameContainerType) => {
   const emailFieldStyle = useMemo(() => {
     return {
@@ -32,12 +37,16 @@ const NameContainer = ({
 
   return (
     <View style={[emailFieldStyle]}>
-      <Text style={styles.nom}>{lastName}</Text>
+      <Text style={styles.nom}>{labelField}</Text>
       <TextInput
         style={[styles.emailFieldChild, styles.mt7]}
-        placeholder="Votre nom"
+        placeholder={placeholder}
         keyboardType="default"
         placeholderTextColor="#abb3bb"
+        onChangeText={(newText) => {
+          onChangeValue(nameField, newText);
+        }}
+        value={valueField}
       />
     </View>
   );

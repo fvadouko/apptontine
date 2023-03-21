@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import {
   StyleSheet,
   View,
@@ -10,84 +10,15 @@ import {
 import PasswordView from '../../components/PasswordView';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import * as ImagePicker from 'expo-image-picker';
-import Constants from 'expo-constants';
 
-type AssetsType = {
-  public_id: string;
-  url: string;
-};
+import { useUploadImage } from '../../hooks/upload';
+import { useNavigation } from '@react-navigation/native';
+import { navigationProps } from '../..';
+import { ROUTES } from '../../constants';
 
 const SignUp = () => {
-  const [image, setImage] = useState<string>('');
-  const [asset, setAsset] = useState<AssetsType>({
-    public_id: '',
-    url: '',
-  });
-
-  const pickImage = async () => {
-    const apiUrl =
-      Constants &&
-      Constants.expoConfig &&
-      Constants.expoConfig.extra &&
-      Constants.expoConfig.extra.apiUrl;
-    // const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
-
-    // if (permissionResult.granted === false) {
-    //   alert("You've refused to allow this appp to access your camera!");
-    //   return;
-    // }
-    // No permissions request is necessary for launching the image library
-    try {
-      let deleteImage = false;
-      if (asset.public_id !== '') {
-        deleteImage = true;
-        const response = await fetch(`${apiUrl}/removeimage`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            public_id: asset.public_id,
-          }),
-        });
-        const res = await response.json();
-        console.log('res', res);
-        if (res.success) {
-          console.log('image deleted');
-          deleteImage = false;
-        }
-      }
-      if (deleteImage) {
-        alert('Essayez de nouveau');
-        return;
-      }
-      let result = await ImagePicker.launchImageLibraryAsync({
-        mediaTypes: ImagePicker.MediaTypeOptions.Images,
-        allowsEditing: true,
-        aspect: [4, 3],
-        base64: true,
-      });
-
-      if (!result.canceled) {
-        console.log('{process.env.REACT_APP_API_URL', apiUrl);
-        const response = await fetch(`${apiUrl}/uploadimages`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            image: `data:image/jpeg;base64,${result.assets[0].base64}`,
-          }),
-        });
-        const asset = await response.json();
-        setAsset(asset);
-        setImage(`data:image/jpeg;base64,${result.assets[0].base64}`);
-      }
-    } catch (error) {
-      console.log('error', error);
-    }
-  };
+  const navigation = useNavigation<navigationProps>();
+  const { image, pickImage } = useUploadImage();
 
   return (
     <KeyboardAwareScrollView>
@@ -126,28 +57,32 @@ const SignUp = () => {
             <View
               style={[styles.vousAvezUnCompteParent, styles.mt20]}
             >
-              <Text style={[styles.vousAvezUn, styles.vousTypo]}>
-                Vous avez un compte ?
-              </Text>
-              <Text style={[styles.connectezVous, styles.vousTypo]}>
-                Connectez-vous
-              </Text>
-            </View>
-            <View
-              style={[
-                styles.button,
-                styles.mt20,
-                styles.buttonFlexBox,
-              ]}
-            >
-              <Text
+              <Pressable
                 style={[
-                  styles.largeLabelMedium16px1,
-                  styles.largeTypo,
+                  styles.button,
+                  styles.mt20,
+                  styles.buttonFlexBox,
                 ]}
+                onPress={() =>
+                  navigation.navigate(ROUTES.FORGOT_PASSWORD)
+                }
               >
-                Emregistrer
-              </Text>
+                <Text style={[styles.vousAvezUn, styles.vousTypo]}>
+                  Mot de passe oublié ?
+                </Text>
+              </Pressable>
+              <Pressable
+                style={[
+                  styles.button,
+                  styles.mt20,
+                  styles.buttonFlexBox,
+                ]}
+                onPress={() => navigation.navigate(ROUTES.LOGIN)}
+              >
+                <Text style={[styles.connectezVous, styles.vousTypo]}>
+                  Connectez-vous
+                </Text>
+              </Pressable>
             </View>
           </View>
           <View style={[styles.inscription, styles.cardsFlexBox]}>
@@ -162,16 +97,6 @@ const SignUp = () => {
             style={styles.logo2Icon}
             resizeMode="cover"
             source={require('../../assets/logo.png')}
-          />
-        </View>
-        <View style={[styles.statusBar, styles.cardsFlexBox]}>
-          <View style={styles.barsstatusTime}>
-            <Text style={[styles.time, styles.largeTypo]}>19:27</Text>
-          </View>
-          <Image
-            style={[styles.symbolsIcon, styles.ml240]}
-            resizeMode="cover"
-            source={require('../../assets/symbols3.png')}
           />
         </View>
       </View>
@@ -264,7 +189,7 @@ const styles = StyleSheet.create({
   },
   vousAvezUnCompteParent: {
     width: 317,
-    height: 25,
+    height: 10,
   },
   largeLabelMedium16px1: {
     fontSize: 16,
@@ -337,7 +262,7 @@ const styles = StyleSheet.create({
     backgroundColor: Color.ivory,
     flex: 1,
     width: '100%',
-    height: 1258,
+    height: 1150,
     overflow: 'hidden',
   },
 });

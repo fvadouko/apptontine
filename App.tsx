@@ -1,35 +1,11 @@
-const Stack = createNativeStackNavigator();
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import Acceuil2 from './screens/Acceuil2';
-import ChangeMdp from './screens/home/ChangeMdp';
-import VerroueApp from './screens/home/VerroueApp';
-import PROFILEmodifier from './screens/home/PROFILEmodifier';
-import Souscriptionmodal from './screens/home/Souscriptionmodal';
-import Souscriptionmodal1 from './screens/home/Souscriptionmodal1';
-import Souscriptioncode from './screens/home/Souscriptioncode';
-import ListeDesFeuillesDisponible from './screens/home/ListeDesFeuillesDisponible';
-import MesFormules from './screens/home/MesFormules';
-import MesFormules1 from './screens/home/MesFormules1';
-import Recherche from './screens/home/Recherche';
-import Souscription from './screens/home/Souscription';
-import PROFILE from './screens/home/Profile';
-import VerroueApp1 from './screens/home/VerroueApp1';
-// import Burger from './screens/home/home/Burger';
-import Dashboard from './screens/home/Dashboard';
-import SignUp from './screens/auth/SignUp';
-import Login from './screens/auth/Login';
-import Notification1 from './screens/home/Notification1';
+import SplashScreen from './screens/SplashScreen';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import {
-  View,
-  Text,
-  Pressable,
-  TouchableOpacity,
-} from 'react-native';
-import AuthNavigator from './navigations/AuthNavigator';
+import { AuthProvider } from './context/authContext';
+import InitialScreens from './screens/InitialScreens';
+import { ApolloProvider } from '@apollo/client';
+import { client } from './graphql/schema/mutations';
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] =
@@ -59,16 +35,11 @@ const App = () => {
   }
 
   return (
-    <>
-      {!hideSplashScreen ? (
-        <Acceuil2 />
-      ) : (
-        <NavigationContainer>
-          {/* {isAuthenticated ? AuthNavigator : DrawerNavigator } */}
-          <AuthNavigator />
-        </NavigationContainer>
-      )}
-    </>
+    <ApolloProvider client={client}>
+      <AuthProvider>
+        {!hideSplashScreen ? <SplashScreen /> : <InitialScreens />}
+      </AuthProvider>
+    </ApolloProvider>
   );
 };
 export default App;

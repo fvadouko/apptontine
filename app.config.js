@@ -11,10 +11,10 @@ module.exports = {
     backgroundColor: '#ffffff',
   },
   extra: {
-    apiUrl: process.env.API_URL ?? 'http://192.168.1.13:8000',
+    apiUrl: process.env.API_URL ?? 'http://192.168.1.11:8000',
     graphqlEndpoint:
       process.env.GRAPHQL_ENDPOINT ??
-      'http://192.168.1.13:8000/graphql',
+      'http://192.168.1.11:8000/graphql',
   },
   plugins: [
     [
