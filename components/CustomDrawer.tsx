@@ -16,32 +16,21 @@ import { COLORS, IMGS } from '../constants';
 import { Color, FontFamily, Margin } from '../GlobalStyles';
 import { useNavigation } from '@react-navigation/native';
 import { navigationProps } from '..';
+import { AuthContext } from '../context/authContext';
 
 const { width } = Dimensions.get('screen');
 
 const CustomDrawer = (props: any) => {
   const navigation = useNavigation<navigationProps>();
+  const { state } = React.useContext(AuthContext);
+
+  const { user } = state;
+
   return (
     <DrawerContentScrollView {...props}>
       <View style={styles.burger}>
         <View style={styles.burgerChild} />
         <View style={styles.menu}>
-          <Pressable
-            style={[styles.rectangleParent, styles.frameChildLayout]}
-            onPress={() => navigation.navigate('Dashboard')}
-          >
-            <View
-              style={[styles.frameChild, styles.frameChildLayout]}
-            />
-            <Image
-              style={[
-                styles.icsharpCloseIcon,
-                styles.frameParentPosition,
-              ]}
-              resizeMode="cover"
-              source={require('../assets/icsharpclose.png')}
-            />
-          </Pressable>
           <View style={[styles.menuInner, styles.menuParentPosition]}>
             <View style={styles.vectorFlexBox}>
               <Image
@@ -52,7 +41,7 @@ const CustomDrawer = (props: any) => {
               <Text
                 style={[
                   styles.dconnexion,
-                  styles.ml40,
+                  styles.ml13,
                   styles.dconnexionTypo,
                 ]}
               >
@@ -60,9 +49,6 @@ const CustomDrawer = (props: any) => {
               </Text>
             </View>
           </View>
-          <View
-            style={[styles.menuChild, styles.menuParentPosition]}
-          />
           <View
             style={[styles.groupParent, styles.menuParentPosition]}
           >
@@ -216,6 +202,7 @@ const CustomDrawer = (props: any) => {
               source={require('../assets/line.png')}
             />
           </View>
+
           <View
             style={[styles.frameParent2, styles.menuParentPosition]}
           >
@@ -223,9 +210,9 @@ const CustomDrawer = (props: any) => {
               style={[styles.imageParent, styles.frameParentFlexBox]}
             >
               <Image
-                style={styles.imageIcon}
+                style={[styles.imageIcon, styles.userImg]}
                 resizeMode="cover"
-                source={require('../assets/image1.png')}
+                source={{ uri: user.image.url }}
               />
               <Text
                 style={[
@@ -366,7 +353,7 @@ const styles = StyleSheet.create({
     width: 177,
   },
   menuInner: {
-    top: 777,
+    bottom: 50,
     backgroundColor: Color.tomato,
     shadowColor: 'rgba(255, 255, 255, 0.5)',
     shadowOffset: {
@@ -380,7 +367,7 @@ const styles = StyleSheet.create({
     paddingVertical: 19,
   },
   menuChild: {
-    height: 777,
+    flex: 1,
     top: 0,
     backgroundColor: Color.ivory,
   },
@@ -466,7 +453,7 @@ const styles = StyleSheet.create({
   },
   groupParent: {
     top: 118,
-    height: 272,
+    flex: 1,
   },
   imageIcon: {
     width: 43,
@@ -479,7 +466,7 @@ const styles = StyleSheet.create({
     height: 28,
   },
   imageParent: {
-    paddingHorizontal: 10,
+    paddingHorizontal: 5,
     paddingVertical: 0,
   },
   frameInner: {
@@ -487,19 +474,29 @@ const styles = StyleSheet.create({
     height: 1,
   },
   frameParent2: {
-    top: 13,
+    top: 25,
   },
   menu: {
     width: 391,
     left: 0,
     top: 0,
-    position: 'absolute',
-    height: 844,
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
   burger: {
     overflow: 'hidden',
     height: 844,
     width: 390,
     backgroundColor: Color.ivory,
+  },
+  userImg: {
+    width: 80,
+    height: 80,
+    borderRadius: 110 / 2,
+
+    borderWidth: 4,
+    borderColor: COLORS.white,
   },
 });

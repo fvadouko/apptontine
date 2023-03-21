@@ -25,6 +25,8 @@ export const LOGIN_USER_MUTATION = gql`
       idUser
       email
       token
+      firstname
+      lastname
       image {
         url
       }

@@ -43,13 +43,15 @@ export const useForm = (schema: SampleForm) => {
     event.preventDefault();
 
     const user = await loginUser(form);
-    console.log(user);
+
     dispatch({
       type: 'LOGGED_IN_USER',
       payload: {
         idUser: user.idUser,
         token: user.token,
         image: user.image,
+        lastname: user.lastname,
+        firstname: user.firstname,
       },
     });
   };
