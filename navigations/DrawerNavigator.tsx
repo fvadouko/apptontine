@@ -3,7 +3,7 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { COLORS, ROUTES } from '../constants';
 
 import BottomTabNavigator from './BottomTabNavigator';
-import Icon from 'react-native-vector-icons/Ionicons';
+
 import CustomDrawer from '../components/CustomDrawer';
 
 const Drawer = createDrawerNavigator();
@@ -26,9 +26,6 @@ function DrawerNavigator() {
         component={BottomTabNavigator}
         options={{
           title: 'Home',
-          drawerIcon: ({ focused, color, size }) => (
-            <Icon name="home-sharp" size={18} color={color} />
-          ),
         }}
       />
     </Drawer.Navigator>

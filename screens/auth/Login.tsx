@@ -16,6 +16,7 @@ import { Margin, FontFamily, Color } from '../../GlobalStyles';
 import { navigationProps } from '../..';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import { ROUTES } from '../../constants';
+import LoginContainer from '../../components/LoginContainer';
 
 const Login = () => {
   const [checkchecked, setCheckchecked] = useState(false);
@@ -55,40 +56,7 @@ Lorem ipsum dolor sit amet consectetur.`}</Text>
             </View>
             <View style={[styles.cards, styles.mt45]}>
               <View>
-                <View>
-                  <Text style={styles.nomDutilisateur}>
-                    Nom d’utilisateur
-                  </Text>
-                  <TextInput
-                    style={[
-                      styles.emailFieldChild,
-                      styles.mt7,
-                      styles.buttonFlexBox,
-                      styles.fieldChildBorder,
-                    ]}
-                    placeholder="Votre nom d’utilisateur"
-                    keyboardType="email-address"
-                    autoCapitalize="none"
-                    placeholderTextColor="#abb3bb"
-                  />
-                </View>
-                <View style={styles.mt16}>
-                  <Text style={styles.nomDutilisateur}>
-                    Mot de passe
-                  </Text>
-                  <TextInput
-                    style={[
-                      styles.passwordFieldChild,
-                      styles.mt7,
-                      styles.fieldChildBorder,
-                    ]}
-                    placeholder="votre mot de passe"
-                    keyboardType="default"
-                    autoCapitalize="none"
-                    secureTextEntry
-                    placeholderTextColor="#abb3bb"
-                  />
-                </View>
+                <LoginContainer />
                 <View
                   style={[styles.keepLoggedInParent, styles.mt16]}
                 >

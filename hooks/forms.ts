@@ -3,19 +3,15 @@ import React from 'react';
 import { useState } from 'react';
 import { SampleForm } from '../constants/forms';
 import { AuthContext } from '../context/authContext';
-import { useCreateUser } from './mutations';
+import { useCreateUser, useLoginUser } from './mutations';
 
 export const useForm = (schema: SampleForm) => {
   const [form, setForm] = useState<SampleForm>(schema);
   const { dispatch, state } = React.useContext(AuthContext);
 
   const { createUser, loading } = useCreateUser();
+  const { loginUser } = useLoginUser();
   const handleFieldUpdate = (nameField: string, newText: string) => {
-    // event.preventDefault();
-    console.log('form', form);
-    console.log('newText', newText);
-    console.log('nameField', nameField);
-    // console.log('value', event.target.value);
     setForm({
       ...form,
       fields: {
@@ -31,7 +27,6 @@ export const useForm = (schema: SampleForm) => {
 
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    console.log(state.user.image);
 
     const user = await createUser(form, state.user.image);
     dispatch({
@@ -42,8 +37,22 @@ export const useForm = (schema: SampleForm) => {
         image: user.image,
       },
     });
-    console.log('form', user);
   };
 
-  return { form, handleFieldUpdate, handleSubmit };
+  const handleSubmitLogin = async (event: any) => {
+    event.preventDefault();
+
+    const user = await loginUser(form);
+    console.log(user);
+    dispatch({
+      type: 'LOGGED_IN_USER',
+      payload: {
+        idUser: user.idUser,
+        token: user.token,
+        image: user.image,
+      },
+    });
+  };
+
+  return { form, handleFieldUpdate, handleSubmit, handleSubmitLogin };
 };

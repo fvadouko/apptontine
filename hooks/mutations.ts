@@ -1,11 +1,14 @@
 import { useMutation, useQuery } from '@apollo/client';
 import { SampleForm } from '../constants/forms';
 
-import { CREATE_JOB_MUTATION } from '../graphql/schema/mutations';
+import {
+  LOGIN_USER_MUTATION,
+  CREATE_USER_MUTATION,
+} from '../graphql/schema/mutations';
 
 export function useCreateUser() {
   const [mutate, { loading, error }] = useMutation(
-    CREATE_JOB_MUTATION
+    CREATE_USER_MUTATION
   );
   return {
     createUser: async (form: SampleForm, image: string) => {
@@ -17,6 +20,32 @@ export function useCreateUser() {
         nickname: form.fields.nickname.value,
         tel: form.fields.tel.value,
         image,
+      };
+
+      const {
+        data: { user },
+      } = await mutate({
+        variables: {
+          input: fo,
+        },
+      });
+      return user;
+    },
+
+    loading,
+    error: Boolean(error),
+  };
+}
+
+export function useLoginUser() {
+  const [mutate, { loading, error }] = useMutation(
+    LOGIN_USER_MUTATION
+  );
+  return {
+    loginUser: async (form: SampleForm) => {
+      const fo = {
+        nickname: form.fields.nickname.value,
+        password: form.fields.password.value,
       };
 
       const {
@@ -38,6 +67,7 @@ export function useCreateUser() {
       });
       return user;
     },
+
     loading,
     error: Boolean(error),
   };
