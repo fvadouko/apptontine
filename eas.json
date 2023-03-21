@@ -7,11 +7,16 @@
         "GRAPHQL_ENDPOINT": "https://fast-cash-backend.herokuapp.com/graphql"
       }
     },
-    "preview": {
+    "preview2": {
       "channel": "staging",
       "env": {
         "API_URL": "https://fast-cash-backend.herokuapp.com",
         "GRAPHQL_ENDPOINT": "https://fast-cash-backend.herokuapp.com/graphql"
+      }
+    },
+    "preview": {
+      "android": {
+        "buildType": "apk"
       }
     }
   }

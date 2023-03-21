@@ -142,7 +142,7 @@ const AddButton = () => {
             ]}
           >
             <Image
-              source={require('../assets/Add.png')}
+              source={require('../assets/add.png')}
               resizeMode="contain"
               style={[styles.addButtonIcon, getIconColor(false)]}
             />
