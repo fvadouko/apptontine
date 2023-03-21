@@ -11,6 +11,7 @@ import Section7 from '../../components/Section7';
 import SectionForm from '../../components/SectionForm';
 import Group239702Container from '../../components/Group239702Container';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
+import HeaderContainer from '../../components/HeaderContainer';
 
 const MesFormules = () => {
   const navigation = useNavigation();
@@ -77,6 +78,7 @@ const MesFormules = () => {
         onProfilePress={() => {}}
         onAddPress={() => {}}
       />
+      <HeaderContainer />
     </View>
   );
 };

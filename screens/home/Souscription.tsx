@@ -5,6 +5,7 @@ import Section7 from '../../components/Section7';
 import SubscriptionSection from '../../components/SubscriptionSection';
 import DefaultContainer2 from '../../components/DefaultContainer2';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
+import HeaderContainer from '../../components/HeaderContainer';
 
 const Souscription = () => {
   const navigation = useNavigation();
@@ -30,6 +31,7 @@ const Souscription = () => {
         />
       </View>
       <DefaultContainer2 />
+      <HeaderContainer />
     </View>
   );
 };

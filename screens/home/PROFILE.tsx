@@ -5,6 +5,7 @@ import Section7 from '../../components/Section7';
 import StatusContainer from '../../components/StatusContainer';
 import GroupContainer from '../../components/GroupContainer';
 import { Margin, FontFamily, Color } from '../../GlobalStyles';
+import HeaderContainer from '../../components/HeaderContainer';
 
 const PROFILE = () => {
   const navigation = useNavigation();
@@ -43,6 +44,7 @@ const PROFILE = () => {
         onProfilePress={() => {}}
         onAddPress={() => {}}
       />
+      <HeaderContainer />
     </View>
   );
 };
